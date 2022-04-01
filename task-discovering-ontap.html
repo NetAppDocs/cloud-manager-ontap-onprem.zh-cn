@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head class="at-element-marker">
+  <title>发现内部 ONTAP 集群 | NetApp Documentation</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="发现内部 ONTAP 集群 | NetApp Documentation" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/zh-cn/cloud-manager-ontap-onprem/task-discovering-ontap.html" />
+	<meta property="og:description" content="Cloud Manager 可以在内部环境、 NetApp 私有存储配置和 IBM Cloud 中发现 ONTAP 集群。通过将内部集群添加到 Cloud Manager Canvas ，您可以使用与 Cloud Volumes ONTAP 和其他云存储解决方案相同的工具来管理这些集群。" />
+  <meta property="og:image" content="https://docs.netapp.com/zh-cn/cloud-manager-ontap-onprem/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Cloud Manager 可以在内部环境、 NetApp 私有存储配置和 IBM Cloud 中发现 ONTAP 集群。通过将内部集群添加到 Cloud Manager Canvas ，您可以使用与 Cloud Volumes ONTAP 和其他云存储解决方案相同的工具来管理这些集群。">
+  <meta name="keywords" content=" ontap, cluster, discover, manage, discovering, fas, aff, discover onprem, discover aff cluster, discover cluster, add cluster, active iq, digital wallet"><!-- Icons -->
+  <link rel="icon" href="/zh-cn/cloud-manager-ontap-onprem/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/zh-cn/cloud-manager-ontap-onprem/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- Controls AsciiDoctor Admonition Blocks -->
+  <link rel="stylesheet" type="text/css" href="/zh-cn/cloud-manager-ontap-onprem/css/font-awesome.min.css">
+
+  <!-- Controls the shadow effect for search dropdown menu -->
+  <link rel="stylesheet" href="/zh-cn/cloud-manager-ontap-onprem/css/boxshadowproperties.css">
+
+  <!-- NetApp CSS controls the technical content -->
+  <link rel="stylesheet" type="text/css" href="/zh-cn/cloud-manager-ontap-onprem/css/netapp.css">
+
+  <!-- WWW CSS Content -->
+  <link rel="stylesheet" type="text/css" href="/zh-cn/cloud-manager-ontap-onprem/css/www-luci-dotcom.min.css">
+  <link rel="stylesheet" type="text/css" href="/zh-cn/cloud-manager-ontap-onprem/css/www-netapp-dotcom.css">
+  <link rel="stylesheet" href="/zh-cn/cloud-manager-ontap-onprem/css/www-netapp-library-critical.min.css" media="all" >
+  <link rel="stylesheet" href="/zh-cn/cloud-manager-ontap-onprem/css/www-netapp-library-non-critical.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="/zh-cn/cloud-manager-ontap-onprem/css/www-netapp-library-global-header-footer.min.css">
+
+  <!-- NetApp IE Customizations -->
+  <link rel="stylesheet" href='/zh-cn/cloud-manager-ontap-onprem/css/na-utility.css' type='text/css'>
+  <link rel="stylesheet" href='/zh-cn/cloud-manager-ontap-onprem/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/zh-cn/cloud-manager-ontap-onprem/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/zh-cn/cloud-manager-ontap-onprem/css/na-pagenav.css' type='text/css'>
+
+  
+  <link rel="stylesheet" href="/zh-cn/cloud-manager-ontap-onprem/css/landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/zh-cn/cloud-manager-ontap-onprem/css/tabbed-blocks.css" type="text/css">
+  <link rel='stylesheet' href='/zh-cn/cloud-manager-ontap-onprem/css/na-feature.css' type='text/css'><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><link rel="stylesheet" href='/zh-cn/cloud-manager-ontap-onprem/css/product-family.css' type="text/css">
+  <script src='/zh-cn/cloud-manager-ontap-onprem/js/product-family.js'></script><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/zh-cn/cloud-manager-ontap-onprem/js/na-search.js'></script><script src='/zh-cn/cloud-manager-ontap-onprem/js/na-pagenav.js'></script><link rel='stylesheet' href='/zh-cn/cloud-manager-ontap-onprem/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/zh-cn/cloud-manager-ontap-onprem/css/prism-netapp.css' type='text/css'>
+
+
+  <script src='/zh-cn/cloud-manager-ontap-onprem/js/na-utility.js'></script>
+  <script src='/zh-cn/cloud-manager-ontap-onprem/js/clouddocs.js'></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    var head = document.getElementsByTagName('head')[0];
+    var adobe = document.createElement("script");
+    adobe.type = "text/javascript";
+    adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+    head.appendChild(adobe);
+  }
+  </script>
+  <script src='/zh-cn/cloud-manager-ontap-onprem/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src='/zh-cn/cloud-manager-ontap-onprem/js/toc.js'></script>
+  <script src='/zh-cn/cloud-manager-ontap-onprem/js/customscripts.js'></script><script>
+      $(document).ready(function() {
+          
+          var collapseOnInit = true;
+          
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+          
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-81697994-3');
+  }
+  </script>
+  <script src='/zh-cn/cloud-manager-ontap-onprem/js/version-dropdown.js'></script>
+  <script src='/zh-cn/cloud-manager-ontap-onprem/js/FileSaver.min.js'></script>
+  <script src='/zh-cn/cloud-manager-ontap-onprem/js/jszip-utils.min.js'></script>
+  <script src='/zh-cn/cloud-manager-ontap-onprem/js/jszip.min.js'></script>
+  <script src='/zh-cn/cloud-manager-ontap-onprem/js/pdf-ux.js'></script>
+</head>
+
+
+  <body class role="document">
+    <div id="page" class="n-off-canvas-menu">
+      <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
+      <div class="n-off-canvas-menu__content-wrap">
+        <header class="site-header" id="banner">
+  
+  <!-- Start Page Toolbar -->
+  <div class="page-nav-toolbar">
+    <div id="version-dropdown"></div>
+    <div class="page-nav-contribute"  >
+      <a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-ontap-onprem/issues/new?body=Page%3A%20[发现内部 ONTAP 集群](https://docs.netapp.com/zh-cn/cloud-manager-ontap-onprem/task-discovering-ontap.html)" class="page-nav-contribute-link" role="button"><img src="/zh-cn/cloud-manager-ontap-onprem/images/discuss-sm.svg" class="github-icon" />请求文档变更</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-ontap-onprem/blob/main/task-discovering-ontap.adoc" class="page-nav-contribute-link" role="button"><img src="/zh-cn/cloud-manager-ontap-onprem/images/edit-sm.svg" class="github-icon" />在 GitHub 上编辑</a>
+      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/zh-cn/cloud-manager-ontap-onprem/images/article-sm.svg" class="github-icon" />提供者指南</a>
+    </div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">在此页面上</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  <!-- Start top_hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/products-a-z/" class="n-top-hat__link">产品和解决方案</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/support-and-training/netapp-university/" class="n-top-hat__link">支持和培训</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://cloud.netapp.com" class="n-top-hat__link">云中心</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://community.netapp.com/" class="n-top-hat__link">社区</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://blog.netapp.com/" class="n-top-hat__link">日志</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://customers.netapp.com/en/" class="n-top-hat__link">客户案例</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">联系人</a>
+          </li>
+        </ul>
+      </div>
+      <div class="n-top-hat__utils">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">联系人</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End top_hat -->
+
+  <!-- Start property bar -->
+  <style>
+    .n-property-navigation-bar__menus--desktop-experience .n-menu--mega__default-content__heading span {
+    color: #34B0FF;
+    }
+  </style>
+  <div class="n-property-bar " data-ntap-ui="sticky-nav">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link">
+          <span class="n-property-bar__menu-toggle-text">Menu</span>
+          <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+            <title>bars</title>
+            <use xlink:href="/zh-cn/cloud-manager-ontap-onprem/common/svg/sprite.svg#bars"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="n-property-bar__property-mark ">
+        <a href="https://www.netapp.com" class="n-property-bar__property-link">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/zh-cn/cloud-manager-ontap-onprem/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
+              <title>netapp-logo</title>
+              <use xlink:href="/zh-cn/cloud-manager-ontap-onprem/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      
+      <div class="search-property-bar">
+        <div id="search-demo-container" class="searchbox n-property-bar__search">
+          <div id="react-search" 
+          data-search-html="/zh-cn/cloud-manager-ontap-onprem/search.html"
+          data-type="widget" 
+          data-placeholder="搜索文档" 
+          data-no-results-found="未找到与 {query} 匹配的结果。" 
+          data-did-you-mean="搜索 {suggestion}。" 
+          data-no-results-found-did-you-mean="未找到与 {query} 匹配的结果。您是否要搜索 {suggestion}?" 
+          data-results-found="找到 {hitCount} 个结果"  
+          data-sk-es-pf-indexes=""></div>
+          <button class="n-property-bar__search-toggle-button" type="button">
+            <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
+              <title>search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-cn/cloud-manager-ontap-onprem/common/svg/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="n-property-bar__toolbar">
+    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
+      <div id="ie-i18n-menu">
+      <span class="ie-i18n-lang">简体中文</span>
+        <button class="ie-i18n-icon-container" type="button">
+          <svg class="n-globe__icon" aria-labelledby="title">
+            <title>globe</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-cn/cloud-manager-ontap-onprem/common/svg/sprite.svg#globe"></use>
+          </svg>
+        </button>
+      </div>
+      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
+        <div class="n-language-selector-menu">
+          <ul class="n-menu__list">
+            <li class="n-menu__list-column">
+              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/cloud-manager-ontap-onprem/task-discovering-ontap.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ja-jp/cloud-manager-ontap-onprem/task-discovering-ontap.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ko-kr/cloud-manager-ontap-onprem/task-discovering-ontap.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li></ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- End Language Selector -->
+
+    <div class="n-property-bar__cta"></div>
+  </div>
+  <script>
+    $(function(){
+        var currentLocalization = $('html').attr('lang');
+
+        var localizationsDictionary = {
+            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
+            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
+            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
+            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
+            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
+            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
+            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
+            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
+            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
+            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
+            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
+            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
+            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
+            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
+            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
+        };
+
+        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
+            $('.n-property-bar__property-link').attr('href', '/');
+        }
+    });
+  </script>
+  <!-- End property bar -->
+</header>
+
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+  <!-- Sidebar Column -->
+  
+  <div class="col-md-3" id="sidebar-height">
+      <div class="n-pdf-header">
+  <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+    <img src="/zh-cn/cloud-manager-ontap-onprem/images/pdf.png" width="16" height="16"/>可用的 PDF<span>
+    </span>
+  </a>
+</div>
+<div class="n-pdf-body-container">
+  <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        <a target="_blank" href="/zh-cn/cloud-manager-ontap-onprem/pdfs/fullsite-sidebar/内部_ONTAP_集群文档.pdf" >
+          <img src="/zh-cn/cloud-manager-ontap-onprem/images/pdf.png" width="16" height="16"/>此文档站点的 PDF</a>
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/zh-cn/cloud-manager-ontap-onprem/pdfs/sidebar/入门.pdf" 
+            
+          >
+            <img src="/zh-cn/cloud-manager-ontap-onprem/images/pdf.png" width="16" height="16"/>
+            入门
+          </a>
+          
+    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
+  <a target="_blank" href="/zh-cn/cloud-manager-ontap-onprem/pdfs/pages/task-discovering-ontap.pdf" >
+    <img src="/zh-cn/cloud-manager-ontap-onprem/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+</ul>
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/zh-cn/cloud-manager-ontap-onprem/pdfs/sidebar/管理内部_ONTAP_集群.pdf" 
+            
+          >
+            <img src="/zh-cn/cloud-manager-ontap-onprem/images/pdf.png" width="16" height="16"/>
+            管理内部 ONTAP 集群
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/zh-cn/cloud-manager-ontap-onprem/pdfs/sidebar/知识和支持.pdf" 
+            
+          >
+            <img src="/zh-cn/cloud-manager-ontap-onprem/images/pdf.png" width="16" height="16"/>
+            知识和支持
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+</li></ul>
+  <div class="zip-pdf-link-container" style="display: none;">   
+    <a href="#" id="zipPdf">
+      <img src="/zh-cn/cloud-manager-ontap-onprem/images/pdf-zip.png" width="16" height="16"/>
+      <pre>收集单独的 PDF 文档<span class="zip-size"></span></pre>
+    </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+</div>
+<script>
+  $("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+  $("#toggleButtonPdf").click(function () {
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+  });
+</script><div class="sidebar-nav-container">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="https://docs.netapp.com/us-en/cloud-manager-family">
+        所有 Cloud Manager 文档
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-ontap-onprem/index.html">
+        内部 ONTAP 集群文档
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-ontap-onprem/whats-new.html">
+        发行说明
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 入门</div>
+      </a>
+      <ul><li class="  active "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-ontap-onprem/task-discovering-ontap.html">
+        发现 ONTAP 集群
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 管理内部 ONTAP 集群</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-ontap-onprem/task-provisioning-ontap.html">
+        管理内部 ONTAP 卷
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-ontap-onprem/concept-aiq-digital-advisor.html">
+        使用 Active IQ 数字顾问优化集群
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-ontap-onprem/task-managing-ontap.html">
+        使用 Active IQ 数据管理集群
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-ontap-onprem/task-connect-to-onprem.html">
+        连接到内部集群
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-ontap-onprem/task-remove-on-prem.html">
+        删除内部 ONTAP 工作环境
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 知识和支持</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-ontap-onprem/task-support-registration.html">
+        注册以获得支持
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-ontap-onprem/task-get-help.html">
+        获取帮助
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-ontap-onprem/legal-notices.html">
+        法律声明
+      </a></li></ul>
+</div>
+<script>
+  window.onscroll = () => {
+    const value = -40 - (document.body.scrollHeight - (window.innerHeight + document.scrollingElement.scrollTop));
+    
+    document.getElementById("sidebar-height").style.bottom = Math.max(0,value) + "px";
+};
+</script>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+  </div>
+  
+
+  <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content">
+      <div class="ie-utility">
+  <div class="ie-menu">
+    <div class="n-breadcrumb">
+      <ul class="n-breadcrumb__list">
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com">docs.netapp.com</a>
+        </li>
+        
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com/zh-cn/cloud/">云文档</a>
+        </li>
+        
+
+        
+
+        <li class="n-breadcrumb__list-item">
+          <a href="/zh-cn/cloud-manager-ontap-onprem/">On-prem&nbsp;ONTAP&nbsp;clusters</a>
+        </li>
+
+      </ul>
+    </div>
+    <div style="clear: both"></div><!-- Main needs to have height -->
+  </div>
+</div>
+
+      <div class="ie-nmt-disclaimer">
+  <span>
+    <div class="ie-nmt-disclaimer-container">
+      <div class="ie-nmt-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/zh-cn/cloud-manager-ontap-onprem/common/svg/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-nmt-disclaimer-content">
+        <span> 简体中文版经机器翻译而成，仅供参考。如与英语版出现任何冲突，应以英语版为准。 </span>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div><div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">发现内部 ONTAP 集群</h1>
+</div>
+
+
+<p class="page-details">
+  
+    
+    <time datetime="2022-04-01 18:13:45 +0000">04/01/2022</time>
+    
+  
+
+
+</p>
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cloud Manager 可以在内部环境、 NetApp 私有存储配置和 IBM Cloud 中发现 ONTAP 集群。通过将内部集群添加到 Cloud Manager Canvas ，您可以使用与 Cloud Volumes ONTAP 和其他云存储解决方案相同的工具来管理这些集群。</p>
+</div>
+<div class="paragraph">
+<p>除了能够在这些系统上配置存储之外，将这些系统添加到 Cloud Manager 还可以轻松地在 Digital Wallet 中查看硬件和软件合同状态信息，并为这些集群配置基于云的关键服务。其中包括将数据复制到云，将数据备份到云，将冷数据分层到云以及对这些数据运行合规性扫描。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="要求">要求</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>安装在云提供商或内部环境中的 Connector 。</p>
+<div class="paragraph">
+<p>如果您要将冷数据分层到云，则应根据您计划将冷数据分层的位置查看 Connector 的要求。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html" target="_blank" rel="noopener">"了解连接器"</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html" target="_blank" rel="noopener">"在连接器之间切换"</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-tiering/concept-cloud-tiering.html" target="_blank" rel="noopener">"了解 Cloud Tiering"</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>用于将集群添加到 Cloud Manager 的管理员用户帐户的集群管理 IP 地址和密码。</p>
+<div class="paragraph">
+<p>Cloud Manager 使用 HTTPS 发现 ONTAP 集群。如果使用自定义防火墙策略，则它们必须满足以下要求：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Connector 主机必须允许通过端口 443 进行出站 HTTPS 访问。</p>
+<div class="paragraph">
+<p>如果 Connector 位于云中，则预定义的安全组允许所有出站通信。</p>
+</div>
+</li>
+<li>
+<p>ONTAP 集群必须允许通过端口 443 进行入站 HTTPS 访问。</p>
+<div class="paragraph">
+<p>默认的“管理”防火墙策略允许从所有 IP 地址进行入站 HTTPS 访问。如果您修改了此默认策略，或者创建了自己的防火墙策略，则必须将 HTTPS 协议与该策略关联，并启用从 Connector 主机进行访问。</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>一组有效的 NetApp 支持站点凭据。请参见操作说明 <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html" target="_blank" rel="noopener">"将 NSS 帐户添加到 Cloud Manager"</a>。</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="查看已发现和未发现的内部集群">查看已发现和未发现的内部集群</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>您可以使用 Cloud Manager 中的 <em>Digital Walkes</em> 或 <em>Discovery</em> 服务查看，发现和管理支持合同下的内部 ONTAP 集群。</p>
+</div>
+<div class="paragraph">
+<p>要从 <em>Digital Walkes</em> 查看内部集群和许可证详细信息，请执行以下操作：</p>
+</div>
+<div class="olist arabic">
+<div class="title">步骤</div>
+<ol class="arabic">
+<li>
+<p>在 Cloud Manager 中，选择 * 数字电子钱包 * 服务。</p>
+</li>
+<li>
+<p>单击 * 内部部署 ONTAP * 选项卡。</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_digital_wallet_onprem_main.png" alt="内部 ONTAP 集群的 &quot; 数字电子钱包 &quot; 页面的屏幕截图。"></span></p>
+</div>
+<div class="paragraph">
+<p>此时将显示您的 ONTAP 集群，并显示其状态为是否已在 Cloud Manager 中发现。</p>
+</div>
+<div class="paragraph">
+<p>如果系统提示您先输入 NetApp 支持站点（ NSS ）帐户凭据，请在支持信息板中输入这些凭据。添加帐户后，将显示该帐户中包含的集群。</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>要从 <em>Discovery service</em> 查看内部集群和许可证详细信息，请执行以下操作：</p>
+</div>
+<div class="olist arabic">
+<div class="title">步骤</div>
+<ol class="arabic">
+<li>
+<p>在 Cloud Manager 中，选择 * 发现 * 服务。</p>
+</li>
+<li>
+<p>如有必要，选择与您的 Active IQ 帐户关联的 NSS 登录。</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_aiq_main_page.png" alt="内部 ONTAP 集群的 &quot; 发现 &quot; 主页面的屏幕截图。"></span></p>
+</div>
+<div class="paragraph">
+<p>此时将显示具有有效支持合同的 ONTAP 集群，并显示其状态为是否已在 Cloud Manager 中发现它们。</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-ontap-onprem/images/note.svg" alt="注">
+</td>
+<td class="content">
+如果您的支持合同到期，系统将从发现页面中删除。但是，您可以继续在其工作环境中管理这些系统。请参见操作说明 <a href="https://docs.netapp.com/us-en/active-iq/task-renew-support-contracts-for-your-systems.html" target="_blank" rel="noopener">"续订 Active IQ 数字顾问提供的支持合同"</a>。
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="查看集群信息和合同详细信息">查看集群信息和合同详细信息</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>您可以使用 <em>Digital Walkes</em> 查看集群详细信息以及硬件和软件合同状态。</p>
+</div>
+<div class="olist arabic">
+<div class="title">步骤</div>
+<ol class="arabic">
+<li>
+<p>在 * 数字电子邮件 * 中，单击 * 内部部署 ONTAP * 选项卡。</p>
+<div class="paragraph">
+<p>每个集群的行上都会显示软件合同和硬件合同到期日期。</p>
+</div>
+</li>
+<li>
+<p>如果合同即将到期或已到期，您可以单击 Cloud Manager 右下角的聊天图标以请求延长合同。</p>
+</li>
+<li>
+<p>对于要了解其他详细信息的集群，请单击 <span class="image"><img src="./media/button_down_caret.png" alt="注意"></span> 以展开集群信息。</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_digital_wallet_license_info.png" alt="展开集群详细信息以查看集群许可证信息的屏幕截图。"></span></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="从-cloud-manager-发现内部集群">从 Cloud Manager 发现内部集群</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>您可以通过 <em>Digital Walkes</em> ， <em>Discovery</em> 服务或 <em>Canvas</em> 在 Cloud Manager 中发现内部 ONTAP 集群。发现后，它们将在 Cloud Manager 中用作工作环境，以便您可以管理集群。</p>
+</div>
+<div class="sect2">
+<h3 id="从数字市场中发现集群">从数字市场中发现集群</h3>
+<div class="paragraph">
+<p>您可以从数字资源包中发现 ONTAP 集群，并将其添加为工作环境。</p>
+</div>
+<div class="olist arabic">
+<div class="title">步骤</div>
+<ol class="arabic">
+<li>
+<p>在 * 数字电子邮件 * 中，单击 * 内部部署 ONTAP * 选项卡。</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_digital_wallet_clusters.png" alt="内部部署 ONTAP 页面的屏幕截图，其中显示了在您的 NSS 帐户中找到的所有集群。"></span></p>
+</div>
+</li>
+<li>
+<p>对于要通过 Cloud Manager 管理的集群，请单击 * 发现 * 。</p>
+</li>
+<li>
+<p>在 <em>Discover ONTAP Cluster</em> 页面上，输入管理员用户帐户的密码，然后单击 * 发现 * 。</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_discover_ontap_wallet.png" alt="屏幕截图显示了 ONTAP 集群详细信息页面的示例：集群管理 IP 地址，用户名和密码。"></span></p>
+</div>
+<div class="paragraph">
+<p>请注意，集群管理 IP 地址是根据数字电子钱包中的信息填充的。</p>
+</div>
+<div class="paragraph">
+<p>集群在 _On-Premises ONTAP 页面中的状态变为 * 已发现 * 。</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Cloud Manager 会发现集群，并使用集群名称作为工作环境名称将其添加到 Canvas 中的工作环境中。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_onprem_cluster.png" alt="Canvas 中的内部 ONTAP 集群的屏幕截图。"></span></p>
+</div>
+<div class="paragraph">
+<p>您可以在右侧面板中为此集群启用服务，以便在集群之间复制数据，设置云数据分层，将卷备份到云或对卷运行合规性扫描。您也可以创建新卷或启动 System Manager 以执行高级任务。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="从发现页面发现集群">从发现页面发现集群</h3>
+<div class="paragraph">
+<p>您可以从 "Discovery" 页面发现 ONTAP 集群，并将其添加为工作环境。</p>
+</div>
+<div class="olist arabic">
+<div class="title">步骤</div>
+<ol class="arabic">
+<li>
+<p>在 * 发现 * 页面中，单击 * 集群清单 * 选项卡。</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_aiq_clusters.png" alt="&quot;Discovery&quot; 页面的屏幕截图，显示在您的 NSS 帐户中找到的所有集群。"></span></p>
+</div>
+</li>
+<li>
+<p>对于要通过 Cloud Manager 管理的集群，请单击 * 发现 * 。</p>
+</li>
+<li>
+<p>在 <em>Choose a Location</em> 页面上，已预先选择内部部署 ONTAP * ，因此只需单击 * 继续 * 。</p>
+</li>
+<li>
+<p>在 _Cluster ONTAP 详细信息 _ 页面上，输入管理员用户帐户的密码，然后单击 * 添加 * 。</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_discover_ontap.png" alt="屏幕截图显示了 ONTAP 集群详细信息页面的示例：集群管理 IP 地址，用户名和密码。"></span></p>
+</div>
+<div class="paragraph">
+<p>请注意，集群管理 IP 地址是根据 Active IQ 中的信息填充的。</p>
+</div>
+</li>
+<li>
+<p>在 <em>Details &amp; Credentials</em> 页面上，集群名称已添加为工作环境名称，因此只需单击 * 执行 * 即可。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Cloud Manager 会发现集群，并使用集群名称作为工作环境名称将其添加到 Canvas 中的工作环境中。</p>
+</div>
+<div class="paragraph">
+<p>您可以在右侧面板中为此集群启用服务，以便在集群之间复制数据，设置云数据分层，将卷备份到云或对卷运行合规性扫描。您也可以创建新卷或启动 System Manager 以执行高级任务。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="从-画布-页面发现集群">从 " 画布 " 页面发现集群</h3>
+<div class="paragraph">
+<p>您可以从 " 画布 " 页面发现 ONTAP 集群并将其添加为工作环境。如果集群由于当前没有支持合同而未在 " 数字电子钱包 " 或 " 发现 " 页面中列出，则可以使用这些步骤。</p>
+</div>
+<div class="olist arabic">
+<div class="title">步骤</div>
+<ol class="arabic">
+<li>
+<p>在 " 画布 " 页面上，单击 * 添加工作环境 * 并选择 * 内部部署 ONTAP * 。</p>
+</li>
+<li>
+<p>如果出现提示，请创建 Connector 。</p>
+<div class="paragraph">
+<p>有关详细信息，请参见上述链接。</p>
+</div>
+</li>
+<li>
+<p>在 _Cluster ONTAP 详细信息 _ 页面上，输入集群管理 IP 地址和管理员用户帐户的密码，然后单击 * 添加 * 。</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_discover_ontap.png" alt="屏幕截图显示了 ONTAP 集群详细信息页面的示例：集群管理 IP 地址，用户名和密码。"></span></p>
+</div>
+</li>
+<li>
+<p>在 <em>Details &amp; Credentials</em> 页面上，输入工作环境的名称和问题描述，然后单击 * 执行 * 。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Cloud Manager 会发现集群并将其添加到 Canvas 中的工作环境。</p>
+</div>
+<div class="paragraph">
+<p>您可以在右侧面板中为此集群启用服务，以便在集群之间复制数据，设置云数据分层，将卷备份到云或对卷运行合规性扫描。您也可以创建新卷或启动 System Manager 以执行高级任务。</p>
+</div>
+</div>
+</div>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+      <div class="n-footer__bottom-left">
+
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+            <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+            </li>
+
+</ul>
+</div>
+<div class="n-footer__social-links">
+<ul class="n-footer__social-link-list">
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com" target="_blank" title="blog" alt="blog">
+<span class="n-footer__social-link-text">blog</span>
+<svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+  <title>blog@</title>
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-cn/cloud-manager-ontap-onprem/common/svg/sprite.svg#blog"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/" target="_blank" title="community" alt="community">
+<span class="n-footer__social-link-text">community</span>
+<svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+<title>community@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-cn/cloud-manager-ontap-onprem/common/svg/sprite.svg#comments"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp" target="_blank" title="twitter" alt="twitter">
+<span class="n-footer__social-link-text">twitter</span>
+<svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+<title>twitter@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-cn/cloud-manager-ontap-onprem/common/svg/sprite.svg#twitter"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp" target="_blank" title="facebook" alt="facebook">
+<span class="n-footer__social-link-text">facebook</span>
+<svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+<title>facebook@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-cn/cloud-manager-ontap-onprem/common/svg/sprite.svg#facebook"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-linkedin" href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+<span class="n-footer__social-link-text">linkedin</span>
+<svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+<title>linkedin@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-cn/cloud-manager-ontap-onprem/common/svg/sprite.svg#linkedin"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-youtube" href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+<span class="n-footer__social-link-text">youtube</span>
+<svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+<title>youtube@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-cn/cloud-manager-ontap-onprem/common/svg/sprite.svg#youtube"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-slideshare" href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+<span class="n-footer__social-link-text">slideshare</span>
+<svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+<title>slideshare@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-cn/cloud-manager-ontap-onprem/common/svg/sprite.svg#slideshare"></use>
+</svg>
+
+</a>
+</li>
+</ul>
+</div>
+
+</div>
+<div class="n-footer__bottom-right">
+  <p class="n-footer__fine-print">想就我们的网站提供反馈?<a target="_self" href="javascript:netapp_mailto()" class="n-footer__copyright">请告诉我们</a>
+  <a href="https://docs.netapp.com/zh-cn/announcements/" class="n-footer__copyright">通知</a>
+  </p>
+</div>
+</div>
+</div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/zh-cn/cloud-manager-ontap-onprem/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/zh-cn/cloud-manager-ontap-onprem/js/prism.js'></script>
+      <script type="text/javascript" src='/zh-cn/cloud-manager-ontap-onprem/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/zh-cn/cloud-manager-ontap-onprem/js/www-ntap.js'></script>
+    <script src='/zh-cn/cloud-manager-ontap-onprem/js/tabbed-blocks.js'></script>
+  </body></html>
