@@ -1,0 +1,69 @@
+---
+settings:
+  name: On-prem ONTAP clusters
+  platform: cloud
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  langs: zh-cn,us-en,ja-jp,ko-kr
+sidebar:
+  entries:
+  - title: 所有 Cloud Manager 文档
+    url: https://docs.netapp.com/us-en/cloud-manager-family
+  - title: 内部 ONTAP 集群文档
+    url: "/index.html"
+  - title: 发行说明
+    url: "/whats-new.html"
+  - title: 入门
+    entries:
+    - title: 发现 ONTAP 集群
+      url: "/task-discovering-ontap.html"
+  - title: 管理内部 ONTAP 集群
+    entries:
+    - title: 管理内部 ONTAP 卷
+      url: "/task-provisioning-ontap.html"
+    - title: 使用 Active IQ 数字顾问优化集群
+      url: "/concept-aiq-digital-advisor.html"
+    - title: 使用 Active IQ 数据管理集群
+      url: "/task-managing-ontap.html"
+    - title: 连接到内部集群
+      url: "/task-connect-to-onprem.html"
+    - title: 删除内部 ONTAP 工作环境
+      url: "/task-remove-on-prem.html"
+  - title: 知识和支持
+    entries:
+    - title: 注册以获得支持
+      url: "/task-support-registration.html"
+    - title: 获取帮助
+      url: "/task-get-help.html"
+  - title: 法律声明
+    url: "/legal-notices.html"
+homepage:
+  tiles:
+  - title: 入门
+    links:
+    - title: 查看已发现和未发现的内部集群
+      url: task-discovering-ontap.html#viewing-discovered-and-undiscovered-on-prem-clusters
+    - title: 发现 ONTAP 集群
+      url: task-discovering-ontap.html
+    - title: 新增功能
+      url: whats-new.html
+  - title: 管理内部 ONTAP 集群
+    links:
+    - title: 创建卷
+      url: task-provisioning-ontap.html
+    - title: 下载新的磁盘和磁盘架固件
+      url: task-managing-ontap.html#downloading-new-disk-and-shelf-firmware
+    - title: 使用 System Manager 和命令行界面管理内部 ONTAP 系统
+      url: task-connect-to-onprem.html
+  - title: 博客社区
+    links:
+    - title: NetApp 社区
+      url: https://community.netapp.com/t5/Cloud-Data-Services/ct-p/CDS
+    - title: Cloud Central 博客
+      url: https://cloud.netapp.com/blog
+    - title: 云网络研讨会
+      url: https://cloud.netapp.com/events
+product-family: {}

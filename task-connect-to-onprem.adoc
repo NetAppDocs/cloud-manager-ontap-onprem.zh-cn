@@ -1,0 +1,71 @@
+---
+sidebar: sidebar 
+permalink: task-connect-to-onprem.html 
+keywords: system manager, connecting, cli, command, command line, connect, shell, interface 
+summary: 如果您需要对内部 ONTAP 系统执行高级管理，可以使用 ONTAP 系统管理器或命令行界面执行此操作。 
+---
+= 连接到内部 ONTAP 系统
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+如果您需要对内部 ONTAP 系统执行高级管理，可以使用 ONTAP 系统管理器或命令行界面执行此操作。
+
+
+
+== 连接到 System Manager
+
+您可能需要从 System Manager 执行一些内部部署 ONTAP 任务， System Manager 是一种基于浏览器的管理工具，可在集群上运行。
+
+要从中访问 Cloud Manager 的计算机必须与内部 ONTAP 系统建立网络连接。例如，您可能需要从内部网络中的跳转主机登录到 Cloud Manager 。
+
+.步骤
+. 在 " 画布 " 页面中，双击要使用 System Manager 管理的内部 ONTAP 系统。
+. 单击菜单图标，然后单击 * 系统管理器 * 。
+. 单击 * 启动 * 。
++
+System Manager 将在新的浏览器选项卡中加载。
+
+. 在登录屏幕上，输入创建集群时指定的管理员用户的用户名和密码，然后单击 * 登录 * 。
+
+
+系统管理器控制台即会加载。现在，您可以使用它来管理内部 ONTAP 系统。
+
+
+
+== 连接到 ONTAP 命令行界面
+
+ONTAP 命令行界面可用于运行所有管理命令，也是执行高级任务或使用命令行界面更自如的理想选择。您可以使用 Secure Shell （ SSH ）连接到 CLI 。
+
+使用 SSH 连接到内部 ONTAP 系统的主机必须与内部 ONTAP 系统建立网络连接。例如，您可能需要使用内部网络中跨接主机的 SSH 。
+
+.步骤
+. 在 Cloud Manager 中，确定集群管理界面的 IP 地址：
++
+.. 在 " 画布 " 页面上，选择内部 ONTAP 系统。
+.. 单击 image:screenshot_sync_status_icon.gif[""] 并复制集群管理 IP 地址。
+
+
+. 使用 SSH 使用管理员帐户连接到集群管理接口 IP 地址。
++
+* 示例 *
+
++
+下图显示了使用 PuTTY 的示例：
+
++
+image:screenshot_cli2.gif["屏幕截图显示了端口 22 上的目标 admin@192.168.11 5 。"]
+
+. 在登录提示符处，输入管理员帐户的密码。
++
+* 示例 *
+
++
+....
+Password: ********
+ONTAP2::>
+....
+

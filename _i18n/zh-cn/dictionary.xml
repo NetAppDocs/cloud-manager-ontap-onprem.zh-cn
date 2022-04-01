@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blocks>
+  <block id="3c10116b37b407ac79092a38ffb292e4" category="summary">在向 NetApp 技术支持创建支持案例之前，您需要先将 NetApp 支持站点帐户添加到 Cloud Manager 中，然后注册获取支持。</block>
+  <block id="42748df9eaa0be17ddc5cc1593cf57ab" category="doc">注册以获得支持</block>
+  <block id="d41d8cd98f00b204e9800998ecf8427e" category="inline-link-macro"></block>
+  <block id="d53e2559d6ace0e907fc57192bf286b6" category="paragraph"><block ref="d53e2559d6ace0e907fc57192bf286b6" category="inline-link-macro-rx"></block></block>
+  <block id="09a149a5c5d747e4952df900eab14719" category="summary">如果您不想再从 Cloud Manager 管理内部 ONTAP 工作环境，请将其删除。</block>
+  <block id="833397a222b2d3624761a8e68a721fd5" category="doc">删除内部 ONTAP 工作环境</block>
+  <block id="f23bd56e3b5d6f7f6472fcb2b4cd3d5a" category="paragraph">删除工作环境不会影响 ONTAP 集群。您可以随时从 Cloud Manager 重新发现它。</block>
+  <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">步骤</block>
+  <block id="0280e7f2fa84bc4f3c493a7a89c90d28" category="list-text">在 " 画布 " 页面上，双击内部 ONTAP 工作环境的名称。</block>
+  <block id="80e3b13d71092100ec711ddee84d23a4" category="list-text">单击菜单图标并选择 * 删除 * 。</block>
+  <block id="82efd2783df66726ca1b3a680a181ac8" category="inline-image-macro">显示页面右上角菜单和删除选项的屏幕截图。</block>
+  <block id="fdc54b68e260b5861ecabd7cfd437124" category="paragraph"><block ref="fdc54b68e260b5861ecabd7cfd437124" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="40b851aafab82c78484c46169f816fd2" category="list-text">单击 * 删除 * 进行确认。</block>
+  <block id="21bba0a7398f9083f3d50b42a5504b37" category="summary">Cloud Manager 可以在内部环境、 NetApp 私有存储配置和 IBM Cloud 中发现 ONTAP 集群。通过将内部集群添加到 Cloud Manager Canvas ，您可以使用与 Cloud Volumes ONTAP 和其他云存储解决方案相同的工具来管理这些集群。</block>
+  <block id="99cef0e0b5f9d9d8e28e23f9098ec0b6" category="doc">发现内部 ONTAP 集群</block>
+  <block id="a22cdf185b246eb453267216a656867b" category="paragraph">除了能够在这些系统上配置存储之外，将这些系统添加到 Cloud Manager 还可以轻松地在 Digital Wallet 中查看硬件和软件合同状态信息，并为这些集群配置基于云的关键服务。其中包括将数据复制到云，将数据备份到云，将冷数据分层到云以及对这些数据运行合规性扫描。</block>
+  <block id="5a2ebfb8baa378cfcfcba58bbb1380c2" category="section-title">要求</block>
+  <block id="1f4a04b80ac0fff1532fab464942b834" category="list-text">安装在云提供商或内部环境中的 Connector 。</block>
+  <block id="cb754929bd2884eb53bfc39ddd5aadad" category="paragraph">如果您要将冷数据分层到云，则应根据您计划将冷数据分层的位置查看 Connector 的要求。</block>
+  <block id="e6e80588e9fe7cf89218fea44300f7ca" category="inline-link">了解连接器</block>
+  <block id="da1264a616f156bd6836a85f7dfdea5a" category="list-text"><block ref="da1264a616f156bd6836a85f7dfdea5a" category="inline-link-rx"></block></block>
+  <block id="c870531773e82c374eb4125c8029e25e" category="inline-link">在连接器之间切换</block>
+  <block id="74d39f4b6fe0e32c5cfa2ed86891bf44" category="list-text"><block ref="74d39f4b6fe0e32c5cfa2ed86891bf44" category="inline-link-rx"></block></block>
+  <block id="36afa058c74d288178950c27927bdb38" category="inline-link">了解 Cloud Tiering</block>
+  <block id="4a88b41a42a9618291028593ae2a0b05" category="list-text"><block ref="4a88b41a42a9618291028593ae2a0b05" category="inline-link-rx"></block></block>
+  <block id="b4ffcf033604873104ed7bd60333e4fc" category="list-text">用于将集群添加到 Cloud Manager 的管理员用户帐户的集群管理 IP 地址和密码。</block>
+  <block id="231fa707099b15748dcedaa672a38da0" category="paragraph">Cloud Manager 使用 HTTPS 发现 ONTAP 集群。如果使用自定义防火墙策略，则它们必须满足以下要求：</block>
+  <block id="b06972aadece5eaa3ac9cc962a035477" category="list-text">Connector 主机必须允许通过端口 443 进行出站 HTTPS 访问。</block>
+  <block id="2b9e44ec073f65b2847ecb4d29f27fb3" category="paragraph">如果 Connector 位于云中，则预定义的安全组允许所有出站通信。</block>
+  <block id="6f94f90ef34d6e0c2ce0a93e0edc57d7" category="list-text">ONTAP 集群必须允许通过端口 443 进行入站 HTTPS 访问。</block>
+  <block id="6f9f6c9a212736eda9e7ebc73ff5b991" category="paragraph">默认的“管理”防火墙策略允许从所有 IP 地址进行入站 HTTPS 访问。如果您修改了此默认策略，或者创建了自己的防火墙策略，则必须将 HTTPS 协议与该策略关联，并启用从 Connector 主机进行访问。</block>
+  <block id="f154773445f5f4ed354ad1d6b1458de0" category="inline-link">将 NSS 帐户添加到 Cloud Manager</block>
+  <block id="b91358861e1d424b929dddf5a397bc81" category="list-text">一组有效的 NetApp 支持站点凭据。请参见操作说明<block ref="6ee42390f038b7658fb8dfbbc6c21b14" category="inline-link-rx"></block>。</block>
+  <block id="a629e0a77229bc88612039da60ff1fcb" category="section-title">查看已发现和未发现的内部集群</block>
+  <block id="be46af8b5037a09e14d6aea77aa745d1" category="paragraph">您可以使用 Cloud Manager 中的 _Digital Walkes_ 或 _Discovery_ 服务查看，发现和管理支持合同下的内部 ONTAP 集群。</block>
+  <block id="d12f32a1e487926f44cc406fb25ca418" category="paragraph">要从 _Digital Walkes_ 查看内部集群和许可证详细信息，请执行以下操作：</block>
+  <block id="e2f4af182c255caedb431ba0b5e53878" category="list-text">在 Cloud Manager 中，选择 * 数字电子钱包 * 服务。</block>
+  <block id="fdc520fd72025accf572613a40564176" category="list-text">单击 * 内部部署 ONTAP * 选项卡。</block>
+  <block id="705316ae4d75d35f1e961cab58a5d5df" category="inline-image-macro">内部 ONTAP 集群的 " 数字电子钱包 " 页面的屏幕截图。</block>
+  <block id="7d584a90892954972995f98a62f03440" category="paragraph"><block ref="7d584a90892954972995f98a62f03440" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="16e9dbd4a18087ff905686ae9bd7ca44" category="paragraph">此时将显示您的 ONTAP 集群，并显示其状态为是否已在 Cloud Manager 中发现。</block>
+  <block id="93416f52fcce3ab7a37ed87d0aeb8134" category="paragraph">如果系统提示您先输入 NetApp 支持站点（ NSS ）帐户凭据，请在支持信息板中输入这些凭据。添加帐户后，将显示该帐户中包含的集群。</block>
+  <block id="354f939b57a1918425820055547d8166" category="paragraph">要从 _Discovery service_ 查看内部集群和许可证详细信息，请执行以下操作：</block>
+  <block id="d69b7414da10a87e5a3030f220161dfa" category="list-text">在 Cloud Manager 中，选择 * 发现 * 服务。</block>
+  <block id="f1b045e4cf088de8d47b50c99c582e48" category="list-text">如有必要，选择与您的 Active IQ 帐户关联的 NSS 登录。</block>
+  <block id="0f0ffa8a90cbc52fa86676ccb69096ce" category="inline-image-macro">内部 ONTAP 集群的 " 发现 " 主页面的屏幕截图。</block>
+  <block id="04c986062f9c3ab6ca9967dac4c5be0d" category="paragraph"><block ref="04c986062f9c3ab6ca9967dac4c5be0d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b0ae438dbb700ffcab0b452edad46174" category="paragraph">此时将显示具有有效支持合同的 ONTAP 集群，并显示其状态为是否已在 Cloud Manager 中发现它们。</block>
+  <block id="b5e4244593ae3713ba9c349b71c06182" category="inline-link-macro">续订 Active IQ 数字顾问提供的支持合同</block>
+  <block id="f58334fc97f74b0f9a5bd0fcab804d79" category="admonition">如果您的支持合同到期，系统将从发现页面中删除。但是，您可以继续在其工作环境中管理这些系统。请参见操作说明 <block ref="73ab273e50affbed0eaeebe6bee46665" category="inline-link-macro-rx"></block>。</block>
+  <block id="7f50c223930d4a02cade2b9c75256f8f" category="section-title">查看集群信息和合同详细信息</block>
+  <block id="e6dfd5017eebf97461338fa01b9cb076" category="paragraph">您可以使用 _Digital Walkes_ 查看集群详细信息以及硬件和软件合同状态。</block>
+  <block id="7d8cc3d1d840829a8cdda42ed1f06341" category="list-text">在 * 数字电子邮件 * 中，单击 * 内部部署 ONTAP * 选项卡。</block>
+  <block id="84c2c11254da9ee11c4482a60291186d" category="paragraph">每个集群的行上都会显示软件合同和硬件合同到期日期。</block>
+  <block id="3f844e426a10085ba24d2a77f32144b3" category="list-text">如果合同即将到期或已到期，您可以单击 Cloud Manager 右下角的聊天图标以请求延长合同。</block>
+  <block id="ddd53e8927c624ebcbf44e804dd39950" category="inline-image-macro">注意</block>
+  <block id="d69c8f5affd800d0b387db4764fa4a30" category="list-text">对于要了解其他详细信息的集群，请单击 <block ref="3cc4b517e471a9470762ff8efb27bddb" category="inline-image-macro-rx" type="image"></block> 以展开集群信息。</block>
+  <block id="18f84cf96ce5861e5585468ef883b180" category="inline-image-macro">展开集群详细信息以查看集群许可证信息的屏幕截图。</block>
+  <block id="5796086a716a7059f711cc33be934605" category="paragraph"><block ref="5796086a716a7059f711cc33be934605" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="521890c2a62a1a85cbecc2bafda74ce4" category="section-title">从 Cloud Manager 发现内部集群</block>
+  <block id="37a6c50787e86807fb86ba567bcdf0ee" category="paragraph">您可以通过 _Digital Walkes_ ， _Discovery_ 服务或 _Canvas_ 在 Cloud Manager 中发现内部 ONTAP 集群。发现后，它们将在 Cloud Manager 中用作工作环境，以便您可以管理集群。</block>
+  <block id="c9ecc8a69079ef340936f1093bfada6d" category="section-title">从数字市场中发现集群</block>
+  <block id="908ef7c718a69fa183e13e4c8b3ab47d" category="paragraph">您可以从数字资源包中发现 ONTAP 集群，并将其添加为工作环境。</block>
+  <block id="36d55ec313e00378aaaf5ec3b1bcff58" category="list-text">在 * 数字电子邮件 * 中，单击 * 内部部署 ONTAP * 选项卡。</block>
+  <block id="8d2ff04d10c442ed57703018babe9f96" category="inline-image-macro">内部部署 ONTAP 页面的屏幕截图，其中显示了在您的 NSS 帐户中找到的所有集群。</block>
+  <block id="5f5cb0a23f869bcd760424b63ca7ccbe" category="paragraph"><block ref="5f5cb0a23f869bcd760424b63ca7ccbe" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3b9a7f6da25384dd51d6dbd5ba88f195" category="list-text">对于要通过 Cloud Manager 管理的集群，请单击 * 发现 * 。</block>
+  <block id="f024b01de8a49fd78376b5b34e191e05" category="list-text">在 _Discover ONTAP Cluster_ 页面上，输入管理员用户帐户的密码，然后单击 * 发现 * 。</block>
+  <block id="8de100c0dba6b3831c0b2881ceb2cda0" category="inline-image-macro">屏幕截图显示了 ONTAP 集群详细信息页面的示例：集群管理 IP 地址，用户名和密码。</block>
+  <block id="357d0c6bce7e8c970eebbf9c77a986a3" category="paragraph"><block ref="357d0c6bce7e8c970eebbf9c77a986a3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3c3c9057924029bd556e6edcfa649159" category="paragraph">请注意，集群管理 IP 地址是根据数字电子钱包中的信息填充的。</block>
+  <block id="fc45e850f400ce201ca92baeb830649a" category="paragraph">集群在 _On-Premises ONTAP 页面中的状态变为 * 已发现 * 。</block>
+  <block id="851ba55b7a9669c2b53281675a9400d7" category="paragraph">Cloud Manager 会发现集群，并使用集群名称作为工作环境名称将其添加到 Canvas 中的工作环境中。</block>
+  <block id="487e5c142c79949705e4fec4bdaf1798" category="inline-image-macro">Canvas 中的内部 ONTAP 集群的屏幕截图。</block>
+  <block id="55b907f18f62b7afccbe773678898915" category="paragraph"><block ref="55b907f18f62b7afccbe773678898915" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5001076d3540a9fadfaa9abbcd7c0a33" category="paragraph">您可以在右侧面板中为此集群启用服务，以便在集群之间复制数据，设置云数据分层，将卷备份到云或对卷运行合规性扫描。您也可以创建新卷或启动 System Manager 以执行高级任务。</block>
+  <block id="7362a812b6851f7a017007fc87c33502" category="section-title">从发现页面发现集群</block>
+  <block id="e69ab6e4fe1f42bbc031b0b99f02cc32" category="paragraph">您可以从 "Discovery" 页面发现 ONTAP 集群，并将其添加为工作环境。</block>
+  <block id="b6ba0959daf6c2e88778283aca0e636c" category="list-text">在 * 发现 * 页面中，单击 * 集群清单 * 选项卡。</block>
+  <block id="53c88078c2a5d382925e8aedc1edc203" category="inline-image-macro">"Discovery" 页面的屏幕截图，显示在您的 NSS 帐户中找到的所有集群。</block>
+  <block id="c3b5cdb9acfd996c5114037523a62d4e" category="paragraph"><block ref="c3b5cdb9acfd996c5114037523a62d4e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="13b9e6e3af52ca38ce11c3fd268b0306" category="list-text">在 _Choose a Location_ 页面上，已预先选择内部部署 ONTAP * ，因此只需单击 * 继续 * 。</block>
+  <block id="663909252cbf804332d40198bd07c3e1" category="list-text">在 _Cluster ONTAP 详细信息 _ 页面上，输入管理员用户帐户的密码，然后单击 * 添加 * 。</block>
+  <block id="a84799eaf08f86932722efc82243f9c5" category="paragraph"><block ref="a84799eaf08f86932722efc82243f9c5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b23f4f3576f9bd475fb30812d2b23d55" category="paragraph">请注意，集群管理 IP 地址是根据 Active IQ 中的信息填充的。</block>
+  <block id="dd7d25d7e52a6b920a44c09b9d6001c2" category="list-text">在 _Details &amp; Credentials_ 页面上，集群名称已添加为工作环境名称，因此只需单击 * 执行 * 即可。</block>
+  <block id="1093fa2422906ba065f8a75ad66f4a5e" category="section-title">从 " 画布 " 页面发现集群</block>
+  <block id="2db26f8570c8b8acf20a1bfbc80fd8d7" category="paragraph">您可以从 " 画布 " 页面发现 ONTAP 集群并将其添加为工作环境。如果集群由于当前没有支持合同而未在 " 数字电子钱包 " 或 " 发现 " 页面中列出，则可以使用这些步骤。</block>
+  <block id="97707ad60b3e5459995b6db6d5086ef2" category="list-text">在 " 画布 " 页面上，单击 * 添加工作环境 * 并选择 * 内部部署 ONTAP * 。</block>
+  <block id="2f799a76b51c894f217a81de4e75abc1" category="list-text">如果出现提示，请创建 Connector 。</block>
+  <block id="937fa9b8cdf644357e79a543061b3118" category="paragraph">有关详细信息，请参见上述链接。</block>
+  <block id="669e31e2ded4144ba1ab8e5d140217fa" category="list-text">在 _Cluster ONTAP 详细信息 _ 页面上，输入集群管理 IP 地址和管理员用户帐户的密码，然后单击 * 添加 * 。</block>
+  <block id="67fe55a3364c0f403605fc5a0962dd79" category="list-text">在 _Details &amp; Credentials_ 页面上，输入工作环境的名称和问题描述，然后单击 * 执行 * 。</block>
+  <block id="9b1f59bbde82cfc6467a99c2530b6993" category="paragraph">Cloud Manager 会发现集群并将其添加到 Canvas 中的工作环境。</block>
+  <block id="1e54529331fefb19128d41707045a526" category="summary">了解内部 ONTAP 集群的新增功能。</block>
+  <block id="25203f9c21dc384a4870095f19f67811" category="doc">内部 ONTAP 集群的新增功能</block>
+  <block id="f1c93420db258097a199364a47f6389a" category="section-title">2022 年 2 月 27 日</block>
+  <block id="f25694bb9bc00e8fcfcc1a3c65dd482b" category="section-title">数字电子邮件中提供了一个 " 内部部署 ONTAP " 选项卡。</block>
+  <block id="d3f07c4c7baf0c60bc64c1cdc48732af" category="paragraph">现在，您可以查看内部 ONTAP 集群的清单及其硬件和服务合同到期日期。此外，我们还提供了有关这些集群的其他详细信息。</block>
+  <block id="184ca21b83c54a7ba12f9b1077ccb494" category="inline-link-macro">请参见如何查看此重要的内部集群信息</block>
+  <block id="2e75bdb3e0110a2699bbf1604ed481b5" category="paragraph"><block ref="c8b8a178761036798ad62f0cd5ecaa34" category="inline-link-macro-rx"></block>。您需要为集群创建一个 NetApp 支持站点帐户（ NSS ），并且需要将 NSS 凭据附加到您的 Cloud Manager 帐户。</block>
+  <block id="323b3f6bd6f8fad6e54ac5e1413cf3dc" category="section-title">2022 年 1 月 11 日</block>
+  <block id="d69df284f21ccdf93082c4aaf0953b6d" category="section-title">您添加到内部 ONTAP 集群上的卷的标记可以与标记服务结合使用。</block>
+  <block id="3686b84bef4027bfe5a11fcf472d8662" category="paragraph">添加到卷的标记现在与应用程序模板服务的标记功能相关联，该功能有助于您组织和简化资源管理。</block>
+  <block id="e7c5ad171298e38494ee7665c2b581e3" category="section-title">2021 年 11 月 28 日</block>
+  <block id="feea05ef76a2f6f2d444dfab436c31c4" category="section-title">已简化内部 ONTAP 集群的创建卷向导</block>
+  <block id="decff6be18712c90db61aad628609885" category="paragraph">我们重新设计了创建卷向导，以便于使用，现在您可以选择自定义导出策略。</block>
+  <block id="1758589feb07955b2d0a7b0b09d739c8" category="section-title">2021 年 3 月 8 日</block>
+  <block id="4741d0181532f824e500e5fb61f113de" category="section-title">Active IQ 服务中提供的内部 ONTAP 集群信息</block>
+  <block id="4daa302553b3da312bae6dd7eb61185b" category="inline-link-macro">发现集群</block>
+  <block id="a0f0c23d7902a428b74d69d482ddd35f" category="list-text">当 Active IQ 显示内部集群列表（基于您的 NSS 帐户）时，您可以单击按钮 <block ref="6092f07e6002a33280f60ad47718209e" category="inline-link-macro-rx"></block> 并将其添加到 Cloud Manager Canvas 。这样可以更轻松地从 Cloud Manager 管理所有存储系统。</block>
+  <block id="9daa178990889b96486cdf1ec49a312b" category="inline-link-macro">下载 Ansible 攻略手册并升级集群固件</block>
+  <block id="17a4a2fa852d95e14e95882197efc7aa" category="list-text">当 Active IQ 确定一个或多个集群需要更新固件时，您可以单击按钮以 <block ref="16afe937cb21a9e778b58814919b3a40" category="inline-link-macro-rx"></block>。</block>
+  <block id="6ab419e28cab05bd181b5548828ce291" category="inline-link-macro">云就绪工作负载选项卡</block>
+  <block id="1ebb52f6b09efabdd77b2a2848b85455" category="list-text">新的 <block ref="6662d2379ae546ce8e2cb9fe679f2897" category="inline-link-macro-rx"></block> 提供我们确定最适合从内部 ONTAP 集群迁移到云的工作负载或卷列表。移动其中一些卷可以降低成本，提高性能和故障恢复能力。</block>
+  <block id="9e49141228614f46674f3e99aa052d48" category="inline-link-macro">什么是升降和移动？</block>
+  <block id="40e7938989b9c693ef9d2535a73efc96" category="paragraph">请参见 <block ref="e6e341fabb88ca4be499965211728d47" category="inline-link-macro-rx"></block></block>
+  <block id="a79252770e38858e803b78ebe70f476c" category="summary">Cloud Manager 中的 " 发现 " 页面可显示内部环境中任何未发现的 ONTAP 集群，任何集群是否需要更新磁盘或磁盘架固件，以及您是否正在使用购买内部系统时授予的所有 Cloud Volumes ONTAP 许可证。此信息由 Active IQ 数字顾问提供给 Cloud Manager 。</block>
+  <block id="201d4e253581704f3c9075d20de0800d" category="doc">使用 Active IQ 数据管理 ONTAP 集群</block>
+  <block id="dab2edf9eaac3950e92c281ce358af01" category="inline-link-macro">Active IQ 数字顾问</block>
+  <block id="514b6ec137f734ec761c475906287d33" category="paragraph">Cloud Manager 中的 " 发现 " 页面可显示内部环境中任何未发现的 ONTAP 集群，任何集群是否需要更新磁盘或磁盘架固件，以及您是否正在使用购买内部系统时授予的所有 Cloud Volumes ONTAP 许可证。此信息从提供给 Cloud Manager <block ref="96b0c35d37b4e23868c2e41d5824676c" category="inline-link-macro-rx"></block>。</block>
+  <block id="877e966493986f18eebcf46b7d6d67c2" category="section-title">查看未使用的基于 Cloud Volumes ONTAP 节点的许可证</block>
+  <block id="e051d909dcdfaf8dde6aa313e7e514fb" category="paragraph">您购买的许多内部 ONTAP 存储系统软件包都附带了基于 Cloud Volumes ONTAP 节点的免费许可证，因此您可以在 Cloud Manager 中试用 NetApp 云存储产品。您可以使用此许可证创建新的 Cloud Volumes ONTAP 实例，也可以将此许可证应用于现有 Cloud Volumes ONTAP 实例以将容量扩展 368 TiB 。</block>
+  <block id="28b5c704efe77fa99914c5d15b834356" category="paragraph">您可以根据 NetApp 支持站点凭据查看是否有任何未使用的 Cloud Volumes ONTAP 许可证。</block>
+  <block id="a43ee6f922a7c62ff05b101954d934b2" category="admonition">基于节点的许可证的有效期从下个月的第一天开始。例如，如果您在 2021 年 12 月 15 日获得基于节点的 BYOL 许可证，则许可证期限从 2022 年 1 月 1 日（下个月的第一天）开始。</block>
+  <block id="bb6db3272f61df9d142245bad134431b" category="list-text">在 Cloud Manager 中，单击 * 发现 * 选项卡。</block>
+  <block id="cfc865340f0f02a4dd08f62e2e8fe125" category="list-text">单击页面下部的 * 许可证 * 选项卡。</block>
+  <block id="639b1d7fb8e43ed30e50b381c3c4aa34" category="inline-image-macro">已用和未使用的 Cloud Volumes ONTAP 许可证的屏幕截图。</block>
+  <block id="a2c8a9de7c0c7fa33897f8350d1b5c22" category="paragraph"><block ref="a2c8a9de7c0c7fa33897f8350d1b5c22" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e0100df5af797921fc79adf1b8eaad21" category="paragraph">对于每个未使用的许可证，将显示一个 * 使用许可证 * 按钮。</block>
+  <block id="e8f6ae75b342427a9d51c95e9abc390e" category="list-text">如果要激活并开始使用此许可证，请单击 * 使用许可证 * 。</block>
+  <block id="5287c83ddc3dc50aaff735cfe18a95da" category="inline-image-macro">两个使用许可证选项的屏幕截图。</block>
+  <block id="3d94be1c5586728c800c45af3978b6d1" category="paragraph"><block ref="3d94be1c5586728c800c45af3978b6d1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d838eea6d6aef3f385a5f70f924f4064" category="paragraph">请参见以下任务，了解使用可用许可证的选项。</block>
+  <block id="9010a59dbd1bb55c1d09325b086cf95a" category="section-title">使用未使用的 Cloud Volumes ONTAP 许可证</block>
+  <block id="9df8192c2e5c4ad9ecb7165618fee709" category="paragraph">您可以使用未使用的许可证创建新的 Cloud Volumes ONTAP 实例或扩展现有 Cloud Volumes ONTAP 实例上的许可证容量。许可证容量为 368 TiB 。</block>
+  <block id="bc866d16cf14596fb689a7be19bd9b62" category="paragraph">"_expisates" 列指示许可证处于活动状态的最后一天。创建新的 Cloud Volumes ONTAP 系统时，此日期为许可证到期日期。更新现有 Cloud Volumes ONTAP 系统时，此选项表示现有许可证的延长时间长度。</block>
+  <block id="c01362d3449463ab4de39a406ef94e81" category="paragraph">_License Type_ ， _Hypercaler_ 和 _Model Type_ 列说明了其 Cloud Volumes ONTAP 许可证的类型。例如， * 自带许可证（ BYOL ） | 单个许可证（ Azure ） * 表示此许可证是部署在 Microsoft Azure 中的 " 单节点 " Cloud Volumes ONTAP 系统的 " 自带许可证 " 。表中显示了此列中可能显示的值。</block>
+  <block id="1976d7f704de389d9fe064e08ea35b2d" category="cell">列</block>
+  <block id="c82a6100dace2b41087ba6cf99a5976a" category="cell">值</block>
+  <block id="cdff8be4ca736db9b0823a504eda7e80" category="cell">许可证类型</block>
+  <block id="ca75617283c17509ed536915221a8bcd" category="cell">PAYGO BYOL</block>
+  <block id="c1b47471a575ac0bf20392ca17ecd880" category="cell">超大规模云提供商</block>
+  <block id="57361d3b4b4360545b0c23a47073a41f" category="cell">Azure AWS GCP 所有提供商</block>
+  <block id="e2716f400d704606cc5d4c0987e7ad76" category="cell">型号类型</block>
+  <block id="1ac2cd329c86309526504526d4255f5d" category="cell">单个 HA</block>
+  <block id="4955f544d812d37952a286831508aad2" category="paragraph">创建 _new_ Cloud Volumes ONTAP 系统时，这是要部署的系统类型。例如，使用示例许可证（ * BYOL | Single | Azure* ），您可以在 Azure 中创建一个单节点 Cloud Volumes ONTAP 系统，其授权高达 368 TiB 。此许可证不能用于创建 HA 系统或在 AWS 中部署实例。</block>
+  <block id="0dd047bef2bdbbe37da283a248bb038f" category="paragraph">更新 _existent_ Cloud Volumes ONTAP 系统时，这表示可以扩展其现有许可证容量的系统类型。再次使用示例许可证，您可以延长 Azure 中任何单节点 Cloud Volumes ONTAP 系统的许可证。此许可证不能用于扩展 HA 系统或 AWS 中部署的实例的许可证。</block>
+  <block id="8317d8b26726204f53143b343d30cd86" category="section-title">使用未使用的许可证创建新的 Cloud Volumes ONTAP 系统</block>
+  <block id="316ed297194a01f1ecb2157f422311a3" category="paragraph">按照以下步骤使用未使用的许可证创建新的 Cloud Volumes ONTAP 实例。</block>
+  <block id="4137ed06a6eedeb10215c62f13cf6a4f" category="list-text">单击 * 使用许可证 * 并选择 * 对新 Cloud Volumes ONTAP 使用许可证 * 。</block>
+  <block id="f0e305a2a1a498a40953222c6422fa17" category="list-text">在 "Use License..." 页面中，验证许可证信息，然后单击 * 使用许可证 * 。</block>
+  <block id="cb64511523e262038bbadb5f570d0f00" category="paragraph">在大多数情况下，系统会将您定向到 * 详细信息和凭据 * 页面，以便为 Cloud Volumes ONTAP 系统创建工作环境，因为云提供程序和节点数均由许可证定义。</block>
+  <block id="bdfda9514b4405352b99463199c4abce" category="paragraph">如果您正在使用定义为 " 所有提供程序 " 的许可证，则系统会将您定向到 * 选择位置 * 页面，以便您可以先选择云提供程序，然后再完成 * 详细信息和凭据 * 页面。</block>
+  <block id="eb188ed1b50312a411c4193636276963" category="list-text">按照以下步骤创建工作环境和第一个卷。</block>
+  <block id="a91c3ba620bed9543e87449350fcf5f8" category="paragraph">根据要部署 Cloud Volumes ONTAP 系统的云提供商，请参见以下各节。</block>
+  <block id="7ca1af679f0ba86814f2ad58a578cb7c" category="inline-link">在 Azure 中启动 Cloud Volumes ONTAP</block>
+  <block id="0be0836bc69799b792b188dfc8c7fe7e" category="list-text"><block ref="0be0836bc69799b792b188dfc8c7fe7e" category="inline-link-rx"></block></block>
+  <block id="6602afb860a6cca23c3b75bf601365eb" category="inline-link">在 AWS 中启动 Cloud Volumes ONTAP</block>
+  <block id="3e33b81f05bb640dee79c5aa4e351c91" category="list-text"><block ref="3e33b81f05bb640dee79c5aa4e351c91" category="inline-link-rx"></block></block>
+  <block id="fdbc311c4dd4bb425160f22f166435fa" category="inline-link">在 GCP 中启动 Cloud Volumes ONTAP</block>
+  <block id="cd47b7c8c0d2761b197e744505044dd0" category="list-text"><block ref="cd47b7c8c0d2761b197e744505044dd0" category="inline-link-rx"></block></block>
+  <block id="fc1b08dc940b99d55538c59350836c4e" category="section-title">扩展现有 Cloud Volumes ONTAP 系统的许可证容量</block>
+  <block id="018b9186b94c6dbbc76c0f561953e8fe" category="paragraph">如果您当前部署的 Cloud Volumes ONTAP 系统符合其中一个免费许可证的许可证要求（即相同的云提供商，节点数等），则可以按照以下步骤将许可证容量扩展 368 TiB 。</block>
+  <block id="b363019bfe1ca02220f0c0febfd0d7d3" category="list-text">单击 * 使用许可证 * 并选择 * 向现有 Cloud Volumes ONTAP 添加许可证 * 。</block>
+  <block id="8d2b2ad68e66c2954477a0042c18491b" category="inline-image-macro">用于向现有 Cloud Volumes ONTAP 系统添加许可证的添加许可证对话框的屏幕截图。</block>
+  <block id="a16e3557d85b779de3481b9d463231a3" category="paragraph"><block ref="a16e3557d85b779de3481b9d463231a3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2f63e565e78fbc3941f4aeb818d9adc7" category="list-text">在 " 添加许可证 ..." 页面中，选择要扩展许可证的 Cloud Volumes ONTAP 系统，然后单击 * 添加许可证 * 。</block>
+  <block id="01101cf6491f283bbc511b2204660e07" category="paragraph">此时将显示确认对话框。</block>
+  <block id="943eaf8e2fe7a686c34b7ea7d07b7e5f" category="inline-image-macro">显示许可证已添加到 Cloud Volumes ONTAP 系统的屏幕截图。</block>
+  <block id="0920bd8a3d301421a85410319fdd1857" category="paragraph"><block ref="0920bd8a3d301421a85410319fdd1857" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d5190a36a662e84cf8de5c09d44f6dfa" category="list-text">您可以单击 * 关闭 * 以关闭此窗口并返回到 " 发现 " 页面，也可以单击此链接以转到 Cloud Volumes ONTAP 许可页面以查看有关该系统许可的更多详细信息。</block>
+  <block id="c7cde2cc5531750bd7afb257a7416f69" category="section-title">正在下载新的磁盘和磁盘架固件</block>
+  <block id="c1f8c4f481fea12447e6335187bccea1" category="paragraph">您可以查看发现的任何 ONTAP 集群是否需要更新其磁盘架或磁盘固件。您可以下载 Ansible 攻略手册来升级固件。</block>
+  <block id="ece4bd8c93cef708b8850f01d015cbc1" category="paragraph">* 注： * 只有在订阅了某些支持计划后，才能查看和下载新固件。</block>
+  <block id="5dc9524b4cd7d7218b8b70e20d81aee9" category="list-text">在发现页面中，单击 * 固件更新 * 选项卡。</block>
+  <block id="e821b7bf1b046d731db61151ffef074f" category="inline-image-macro">"Discovery" 页面的屏幕截图，其中显示了需要更新固件的节点。</block>
+  <block id="88bdb0042cbe86520f536789a86aeb48" category="paragraph"><block ref="88bdb0042cbe86520f536789a86aeb48" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="cbdce8b07b7c380c846236fee37c7836" category="paragraph">如果任何集群需要新固件，则会显示 * 全部下载 * 按钮。</block>
+  <block id="8d6d3d96c09b58400db6a0a90b4f4b2e" category="list-text">单击 * 全部下载 * 并保存 zip 文件。</block>
+  <block id="2b089b0727b24846b4d2b3849b27af3f" category="inline-link-macro">更新存储系统固件</block>
+  <block id="cc7bf767406c46d6dec3789baeeeef16" category="list-text">解压缩此 zip 文件，并按照以下说明进行操作 <block ref="21157034c7cb15af080552bd727bf9bb" category="inline-link-macro-rx"></block>。</block>
+  <block id="5296842aa0336682a51237a868549568" category="paragraph">固件已更新。ONTAP 系统下次向 Active IQ 发送 AutoSupport 消息时， _Firmware Updates_ 页面中的状态将更新，以显示不再需要更新。</block>
+  <block id="ff1c95e8f3fad8c7515a303da09fad1e" category="section-title">查看适用于云的内部工作负载</block>
+  <block id="517bf15cf54a7936b9d15152071a6b5f" category="paragraph">某些工作负载或卷最适合从内部 ONTAP 集群迁移到 Cloud Volumes ONTAP 系统。其中一些优势包括降低成本，提高性能和故障恢复能力。"_Cloud Ready Workloads _ " 选项卡列出了已发现的 ONTAP 集群中的这些工作负载。</block>
+  <block id="4daab9a749a609edfa8ab73aa0d34893" category="inline-image-macro">显示可移动到云的内部集群中的工作负载的屏幕截图。</block>
+  <block id="c36e9cf75b6ce98dc93b30298ed56dc4" category="paragraph"><block ref="c36e9cf75b6ce98dc93b30298ed56dc4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8a142176543aec4571af8742cf8d54b8" category="paragraph">此页面上显示的受支持工作负载包括： SAP ， SAP HANA ， Oracle ，文件共享和 SharePoint 。</block>
+  <block id="0c4ef3dd5858986fd8e07047ff6608cf" category="inline-link-macro">提升和移动</block>
+  <block id="97df77063884378a1c2d764fdec7597a" category="paragraph">_lift and shifT_ 是一种将应用程序迁移到云的方法。这意味着无需重新设计应用程序，即可将应用程序及其关联数据迁移到云平台。请参见有关的详细信息 <block ref="5ace72c4dc027f4fe1a0278eeb38322e" category="inline-link-macro-rx"></block>。</block>
+  <block id="1586c6707e7935aaf588bf6b29222f4d" category="summary">从 Cloud Manager 发现内部 ONTAP 集群后，您可以打开工作环境来配置和管理存储。</block>
+  <block id="b310817751b4e8272bdb5072c505baef" category="doc">管理内部 ONTAP 集群的存储</block>
+  <block id="38eaccec7e82003efc63778895a9ac9d" category="section-title">正在创建卷</block>
+  <block id="2cb8480b538d668110f1483b21b959f3" category="paragraph">您可以使用 Cloud Manager 在现有聚合上创建 NFS 或 CIFS 卷。您不能通过 Cloud Manager 在内部 ONTAP 集群上创建新聚合。</block>
+  <block id="efc4120a3fbfbea33245fb931c324492" category="inline-xref">这些步骤</block>
+  <block id="ba9dee2f877a286e797bf6a3232b07bb" category="paragraph">通过 Cloud Manager 的 " 模板 " 功能，您可以创建针对特定应用程序（例如数据库或流式服务）的工作负载要求进行优化的卷。如果您的组织已创建应使用的卷模板，请按照说明进行操作 <block ref="e476f8430392eaa6984ef9c1426bdf73" category="inline-xref-macro-rx"></block>。</block>
+  <block id="7c1c859794874e74db7044dd733c5ca7" category="list-text">在 " 画布 " 页面上，双击要配置卷的内部 ONTAP 集群的名称。</block>
+  <block id="e0e02b01eefffa92ef6dd41ca0bfddaa" category="list-text">单击 * 添加新卷 * 。</block>
+  <block id="108a74a6cbb575c986177039e07dc411" category="list-text">按照向导中的步骤创建卷。</block>
+  <block id="3c4fc22bba56c8a041aad60e63c7450f" category="list-text">* 详细信息和保护 * ：输入有关卷的基本详细信息，然后选择 Snapshot 策略。</block>
+  <block id="3b0e375a08fe94a129cba31916c9d2dc" category="paragraph">此页面上的某些字段不言自明。以下列表介绍了可能需要指导的字段：</block>
+  <block id="6f16a5f8ff5d75ab84c018adacdfcbb7" category="cell">字段</block>
+  <block id="b5a7adde1af5c87d7fd797b6245c2a39" category="cell">Description</block>
+  <block id="6f6cb72d544962fa333e2e34ce64f719" category="cell">Size</block>
+  <block id="7b975bd58356ec64d88f70d7f167a299" category="cell">您可以输入的最大大小在很大程度上取决于您是否启用精简配置、这样您就可以创建一个大于当前可用物理存储的卷。</block>
+  <block id="426fb47479d0477ed5dbc9388b9add76" category="cell">快照策略</block>
+  <block id="052c4d27b63fed6776d46336a295d801" category="cell">Snapshot 副本策略指定自动创建的 NetApp Snapshot 副本的频率和数量。NetApp Snapshot 副本是一个时间点文件系统映像、对性能没有影响、并且只需要极少的存储。您可以选择默认策略或无。您可以为瞬态数据选择无：例如， Microsoft SQL Server 的 tempdb 。</block>
+  <block id="5090bb88c9aa49ab33053342a61490ca" category="list-text">* 协议 * ：选择卷的协议（ NFS 或 CIFS ），然后设置卷的访问控制或权限。</block>
+  <block id="32532e671368d9ba8ec11ef9121e8520" category="paragraph">如果您选择 CIFS ，但尚未设置服务器，则 Cloud Manager 会提示您使用 Active Directory 或工作组设置 CIFS 服务器。</block>
+  <block id="10ca883ec839df9958683234c16faa0c" category="paragraph">以下列表介绍了可能需要指导的字段：</block>
+  <block id="8aaaedc342a0dce1d73d33f3fb69a2af" category="cell">访问控制</block>
+  <block id="bc1f478a23842406dc7a171758b075ab" category="cell">NFS 导出策略定义子网中可访问卷的客户端。默认情况下， Cloud Manager 会输入一个值、用于访问子网中的所有实例。</block>
+  <block id="4f365bcd27fae641194545a5a823e30f" category="cell">权限和用户 / 组</block>
+  <block id="5cd4beaa083f2301775c1a1bc84f2afc" category="cell">通过这些字段，您可以控制用户和组（也称为访问控制列表或 ACL ）对 SMB 共享的访问级别。您可以指定本地或域 Windows 用户或组、 UNIX 用户或组。如果指定域 Windows 用户名，则必须使用 domain\username 格式包含用户的域。</block>
+  <block id="63c4ac4a1d6cda8f9ce366cee0962eb7" category="list-text">* 使用情况配置文件 * ：选择是在卷上启用还是禁用存储效率功能。</block>
+  <block id="1fd2dba2020c106a2c49da0e6ad7e868" category="paragraph">ONTAP 包含多种存储效率功能、可以减少您所需的存储总量。NetApp 存储效率功能具有以下优势：</block>
+  <block id="6cd880eabbec3488232c6cba3fbcf998" category="list-text">精简配置</block>
+  <block id="e0a869114b17393f8a2fea22f17329ae" category="list-text">为主机或用户提供的逻辑存储比实际在物理存储池中提供的存储多。在写入数据时，存储空间将动态分配给每个卷而不是预先分配存储空间。</block>
+  <block id="83f45cad5e6f535ff10e564a526baad0" category="list-text">重复数据删除</block>
+  <block id="9baaeec0cd7e25ec2d4277d7befe94c7" category="list-text">通过定位相同的数据块并将其替换为单个共享块的引用来提高效率。此技术通过消除驻留在同一卷中的冗余数据块来降低存储容量需求。</block>
+  <block id="82af841589057aa8922b1ac3bb4a28a4" category="list-text">压缩</block>
+  <block id="f5061de48feb872d5a805e7385702973" category="list-text">通过在主存储、二级存储和归档存储上的卷中压缩数据来减少存储数据所需的物理容量。</block>
+  <block id="eb5c6869b3fc04254530622723507f79" category="list-text">* 审阅 * ：查看有关卷的详细信息，然后单击 * 添加 * 。</block>
+  <block id="721171135447663f810b8610ea482f5a" category="section-title">使用模板创建卷</block>
+  <block id="afe466f073b1387a5eab0283552b7517" category="paragraph">如果您的组织已创建内部 ONTAP 卷模板，以便您可以部署针对特定应用程序的工作负载要求进行优化的卷，请按照本节中的步骤进行操作。</block>
+  <block id="7ae492186bd46e832a6b64cff9b1575a" category="paragraph">此模板应使您的工作更轻松，因为模板中已定义某些卷参数，例如磁盘类型，大小，协议，快照策略等。如果已预定义某个参数，则只需跳到下一个 volume 参数即可。</block>
+  <block id="395f4870d887a81edabc6ad40f5a84f0" category="admonition">使用模板时，您只能创建 NFS 或 CIFS 卷。</block>
+  <block id="ec8d6cd563b6f9acbaf5d348267aeb5c" category="list-text">在 " 画布 " 页面上，单击要配置卷的内部 ONTAP 系统的名称。</block>
+  <block id="5bc96ba8ddc4433dd0df94e6350c496e" category="list-text">单击 <block ref="a5c9b85c9e509567688aed8106bc419c" category="inline-image-macro-rx" type="image"></block> &gt; * 从模板添加卷 * 。</block>
+  <block id="74099e7b70c30e3a55db543cda9bfc1e" category="inline-image-macro">显示如何从模板添加新卷的屏幕截图。</block>
+  <block id="f5cfbd56be4d95a78f70efb70e2e9079" category="paragraph"><block ref="f5cfbd56be4d95a78f70efb70e2e9079" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5b33742921c3a09b3c0916cff2d87632" category="list-text">在 _Select Template_ 页面中，选择要用于创建卷的模板，然后单击 * 下一步 * 。</block>
+  <block id="41fdbb8293e553892079d0e7ad8a9ad9" category="inline-image-macro">可用应用程序模板的屏幕截图。</block>
+  <block id="cfb983acad90faeddd99d211d0d05e99" category="paragraph"><block ref="cfb983acad90faeddd99d211d0d05e99" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8675916eaff2fb10955e8a3b1b14108f" category="paragraph">此时将显示 _Define Parameters_页面 。</block>
+  <block id="19f5b7f92268b2f8e63e4083819666c9" category="inline-image-macro">显示创建卷所需填写的空白模板的屏幕截图。</block>
+  <block id="19c51733b2ad780abc1dd51dfb4774d0" category="paragraph"><block ref="19c51733b2ad780abc1dd51dfb4774d0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="31f425aaa6a26f3fc5e635704753602f" category="paragraph">* 注： * 如果要查看这些参数的值，您可以单击 * 显示只读参数 * 复选框以显示模板锁定的所有字段。默认情况下，这些预定义字段将被隐藏，并且仅显示需要填写的字段。</block>
+  <block id="44e06c3ed2de64bcd539ac10a3a31173" category="list-text">在 _context_ 区域中，工作环境将使用您启动的工作环境的名称进行填充。您需要选择要在其中创建卷的 * 存储虚拟机 * 和 * 聚合 * 。</block>
+  <block id="b4798c3f6907cfb67d2e44f900cd8761" category="inline-xref">正在创建卷</block>
+  <block id="d6fbed7ed4f7f24d5424eed00308902b" category="list-text">为模板中未硬编码的所有参数添加值。请参见 <block ref="0987d6f2734ae944e1736c1f24a760ec" category="inline-xref-macro-rx"></block> 有关部署内部 ONTAP 卷所需完成的所有参数的详细信息。</block>
+  <block id="2bc51d1d472e80f2611fe5ff280c4ebe" category="list-text">定义完此卷所需的所有参数后，单击 * 运行模板 * 。</block>
+  <block id="b185109168e53693f7b6943d7df66166" category="paragraph">Cloud Manager 会配置卷并显示一个页面，以便您可以查看进度。</block>
+  <block id="40136e65ff57723941fc2af2bf21d54a" category="inline-image-macro">显示通过模板创建新卷的进度的屏幕截图。</block>
+  <block id="1d2547b9bcbb0f13f704545fd4b3b7b0" category="paragraph"><block ref="1d2547b9bcbb0f13f704545fd4b3b7b0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3fcf4599fd910141dcd628a7411238d5" category="paragraph">然后，新卷将添加到工作环境中。</block>
+  <block id="0ca2ea4d1ed88de2980b88af718eedaf" category="paragraph">此外，如果在模板中实施了任何二级操作，例如在卷上启用 Cloud Backup ，则也会执行此操作。</block>
+  <block id="1e57268fd975664444ddbda428e56bf7" category="paragraph">如果配置了 CIFS 共享、请授予用户或组对文件和文件夹的权限、并验证这些用户是否可以访问该共享并创建文件。</block>
+  <block id="9471c2e49e82f1450164e486a41810fd" category="section-title">复制数据</block>
+  <block id="d67fa48b66fcc0b221394da39a91b7bd" category="paragraph">您可以在 Cloud Volumes ONTAP 系统和 ONTAP 集群之间复制数据、方法是选择一次性数据复制、该复制可以帮助您将数据移入或移出云、或定期计划、这有助于灾难恢复或长期保留。</block>
+  <block id="4bfd6df89ae3683de5e81c0d2d601355" category="inline-link">单击此处了解更多详细信息</block>
+  <block id="a8a96c36866372f961b611932778c533" category="paragraph"><block ref="740522bad1dae5d9c555be7717efd2a7" category="inline-link-rx"></block>。</block>
+  <block id="69d7d8f5eb94524f8d67bd4810ecd3b4" category="section-title">备份数据</block>
+  <block id="4dafc83aff4c0c428f00d14ba637d08e" category="paragraph">您可以使用云备份将内部 ONTAP 系统中的数据备份到云中的低成本对象存储。此服务提供备份和还原功能，用于保护内部数据和云数据并对其进行长期归档。</block>
+  <block id="bfdc46d4c7e2c86b2f36ab608613b0a1" category="paragraph"><block ref="92bb2af477ec46204a7fbf4ac8f25c07" category="inline-link-rx"></block>。</block>
+  <block id="b62196e30035e69996a2d1d3a9d64116" category="section-title">扫描，映射和分类数据</block>
+  <block id="8c5469d13e648a63a3b3954844a606d5" category="paragraph">Cloud Data sense 可以对企业内部集群进行扫描，以便对数据进行映射和分类，并识别私有信息。这有助于降低安全性和合规性风险，降低存储成本，并有助于您的数据迁移项目。</block>
+  <block id="3a5ae3c8370ec0420f4d5f09975f9473" category="paragraph"><block ref="4ac871f2acbfe21994d476b705580307" category="inline-link-rx"></block>。</block>
+  <block id="8eb970559649a4b00ff570ac7b611b1a" category="section-title">将数据分层到云</block>
+  <block id="74f0cc3c17958e80b4ccd076c9e50493" category="paragraph">通过使用云分层将 ONTAP 集群中的非活动数据自动分层到对象存储，将数据中心扩展到云。</block>
+  <block id="06ed7fc16cefcce74b94962584869b39" category="paragraph"><block ref="240bb627dd9982017efa6d3b711a39ad" category="inline-link-rx"></block>。</block>
+  <block id="ce21e7ae4271271294ccbf54c8fd6864" category="summary">NetApp 通过多种方式为 Cloud Manager 提供支持。全天候提供丰富的免费自助支持选项，例如知识库（ KB ）文章和社区论坛。您的支持注册包括通过 Web 服务单提供的远程技术支持。</block>
+  <block id="fabfc25ef8996fd90836e58a4c0b26b6" category="doc">获取帮助</block>
+  <block id="7ccaf84febc0ed633fbdbadb8d488a7e" category="paragraph"><block ref="7ccaf84febc0ed633fbdbadb8d488a7e" category="inline-link-macro-rx"></block></block>
+  <block id="b151b3ad7000d170a09f91975e26bf45" category="summary">如果您需要对内部 ONTAP 系统执行高级管理，可以使用 ONTAP 系统管理器或命令行界面执行此操作。</block>
+  <block id="6d0824d1c808525b64d6b584ae3a8175" category="doc">连接到内部 ONTAP 系统</block>
+  <block id="bd6791b739d936827d0be68a00c193da" category="section-title">连接到 System Manager</block>
+  <block id="e9981bacbcd5ea480a3cacf7d804b6cc" category="paragraph">您可能需要从 System Manager 执行一些内部部署 ONTAP 任务， System Manager 是一种基于浏览器的管理工具，可在集群上运行。</block>
+  <block id="ec94e3c72dd4a57a61fc48219f606995" category="paragraph">要从中访问 Cloud Manager 的计算机必须与内部 ONTAP 系统建立网络连接。例如，您可能需要从内部网络中的跳转主机登录到 Cloud Manager 。</block>
+  <block id="b942f0c9a0122357a68d35d76ab18fff" category="list-text">在 " 画布 " 页面中，双击要使用 System Manager 管理的内部 ONTAP 系统。</block>
+  <block id="cb4fcd5786332ca0e73ec9ae0b1d43e7" category="list-text">单击菜单图标，然后单击 * 系统管理器 * 。</block>
+  <block id="3eab8ee0f45fd9624973c05ec4303d5a" category="list-text">单击 * 启动 * 。</block>
+  <block id="7587c6609566a034156659b2141e3de1" category="paragraph">System Manager 将在新的浏览器选项卡中加载。</block>
+  <block id="84a670db3237cb6e7874ef079ba39fe4" category="list-text">在登录屏幕上，输入创建集群时指定的管理员用户的用户名和密码，然后单击 * 登录 * 。</block>
+  <block id="304e0c9f87006647e7b7cb69233dbe66" category="paragraph">系统管理器控制台即会加载。现在，您可以使用它来管理内部 ONTAP 系统。</block>
+  <block id="31c2c11de9569969822fd820af45d8ac" category="section-title">连接到 ONTAP 命令行界面</block>
+  <block id="4e107e465b3e776fcb07ca6e5f56265f" category="paragraph">ONTAP 命令行界面可用于运行所有管理命令，也是执行高级任务或使用命令行界面更自如的理想选择。您可以使用 Secure Shell （ SSH ）连接到 CLI 。</block>
+  <block id="e6ad06bd1420173d20b58a9a17dd8153" category="paragraph">使用 SSH 连接到内部 ONTAP 系统的主机必须与内部 ONTAP 系统建立网络连接。例如，您可能需要使用内部网络中跨接主机的 SSH 。</block>
+  <block id="6ad94be4e63b3d4783fdd1f854b7bbdf" category="list-text">在 Cloud Manager 中，确定集群管理界面的 IP 地址：</block>
+  <block id="4820059dd9647a62e3d49d6805dc17ef" category="list-text">在 " 画布 " 页面上，选择内部 ONTAP 系统。</block>
+  <block id="23c2e641ffa866a42c848c9f2c90ecd1" category="list-text">单击 <block ref="a74720392297d66ac1ab9a90296912c9" category="inline-image-macro-rx" type="image"></block> 并复制集群管理 IP 地址。</block>
+  <block id="58cab5452c4b6c92c8dd75e357433c83" category="list-text">使用 SSH 使用管理员帐户连接到集群管理接口 IP 地址。</block>
+  <block id="938f1047c15f00fdd0cbfc8e4cfa15e1" category="paragraph">* 示例 *</block>
+  <block id="ed9663bc6832f99d5a7f57ceca04eed7" category="paragraph">下图显示了使用 PuTTY 的示例：</block>
+  <block id="a9981641e36e0e304ba5071a1d3b4273" category="inline-image-macro">屏幕截图显示了端口 22 上的目标 admin@192.168.11 5 。</block>
+  <block id="7a9bcdad1d59400ff7c688cda722d3e6" category="paragraph"><block ref="7a9bcdad1d59400ff7c688cda722d3e6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2180cb7bd670dcd385a7b5e609212943" category="list-text">在登录提示符处，输入管理员帐户的密码。</block>
+  <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">法律声明</block>
+  <block id="c59ae8d7beeb519a23478ab048af482c" category="paragraph"><block ref="c59ae8d7beeb519a23478ab048af482c" category="inline-link-macro-rx"></block></block>
+  <block id="6f2ac1cf1da8ec34232c651d4bba0149" category="paragraph"><block ref="6f2ac1cf1da8ec34232c651d4bba0149" category="inline-link-macro-rx"></block></block>
+  <block id="4940124e8487cb4ea36f1511a195cf66" category="inline-link-macro">有关 Cloud Manager 3.9 的注意事项</block>
+  <block id="c069fcc68c5dfa73ccc99924c836cae9" category="list-text"><block ref="c069fcc68c5dfa73ccc99924c836cae9" category="inline-link-macro-rx"></block></block>
+  <block id="45ddc58d1297027037d3c08b53916d6d" category="summary">Active IQ 数字顾问集成在 Cloud Manager UI 中，因此您可以在一个管理平台中优化 ONTAP 集群的操作，安全性和性能。</block>
+  <block id="1f1125562764d9d74a4d3f4bc7cc2a80" category="doc">使用 Active IQ 数字顾问优化集群</block>
+  <block id="8a55e23dfc2cee9948b7f2cff318419d" category="paragraph"><block ref="83bf54f0a7542b03c8754003363eabd9" category="inline-link-rx"></block> 集成到 Cloud Manager UI 中，以便您可以在一个管理平台中优化 ONTAP 集群的操作，安全性和性能。</block>
+  <block id="98f770b0af18ca763421bac22b4b6805" category="section-title">功能</block>
+  <block id="60f840b3ee58d04f9e443013fa9e3b28" category="paragraph">您可以使用 Active IQ 数字顾问在监视列表级别查看存储系统的整体状态，有关系统运行状况的详细信息，清单，规划，升级以及有价值的见解。</block>
+  <block id="cd5d4df84a7902a777304de9ff13e8a8" category="list-text">分析并优化存储系统的运行状况</block>
+  <block id="9d4e486fd4968dd03a1921222e688c12" category="list-text">深入了解存储系统面临的所有风险以及降低风险的措施</block>
+  <block id="4c8438807538fa50db0d24cda516c562" category="list-text">通过查看分析存储设备的性能 性能数据的图形格式</block>
+  <block id="63a792f0efaeee81d9e7f3ba251637c2" category="list-text">获取有关容量超过 90% 或的系统的详细信息 容量接近 90%</block>
+  <block id="25bab72d979d2f781310fbd8a7510d1e" category="list-text">获取有关已过期的硬件和软件的信息 或即将在未来 6 个月内到期</block>
+  <block id="c0b44a835cfaa8886063c96fb9342411" category="list-text">使用 Ansible 升级存储系统软件并更新 ONTAP 固件</block>
+  <block id="696fbf3ecd0e89c737f9c5b7adddfb8e" category="section-title">支持的 ONTAP 系统</block>
+  <block id="4b094536c4cca99df693f08aaf755f4d" category="paragraph">Active IQ 数字顾问可提供有关您的 NSS 帐户中所有内部 ONTAP 系统和 Cloud Volumes ONTAP 系统的信息。</block>
+  <block id="20b4f77bd00b4f63a49ec8e08f3bf6a6" category="section-title">成本</block>
+  <block id="f534e70d23b20b69790b5281217a7257" category="paragraph">通过 Cloud Manager 使用此服务无需任何成本。</block>
+  <block id="292e5c26d5c03cc4f8e1e8768bbbabaa" category="section-title">Active IQ 数字顾问如何与 Cloud Manager 配合使用</block>
+  <block id="d7c60574b4f0b4da904aa4b90c236328" category="paragraph">Active IQ 数字顾问用户界面完全集成在 Cloud Manager 中。</block>
+  <block id="6c393be0430be4cea1a82e8ea44630ed" category="paragraph">在云管理器中，单击 * Active IQ * 服务。</block>
+  <block id="ec6a6fa8382cb9301ba7488319f6fb15" category="list-text">如果您已经在 Cloud Manager 中注册了现有的 NSS 帐户，则 Active IQ 数字顾问用户界面就像您在中的独立实施中看到的一样<block ref="a550a333ee33d06042f0abf049084bb9" category="inline-link-rx"></block>。</block>
+  <block id="8965da9bda23fc5879f1275b96def7e5" category="inline-image-macro">Cloud Manager 中 Active IQ 数字顾问用户界面的屏幕截图。</block>
+  <block id="38f4032535fda9a726d153b903098e68" category="paragraph"><block ref="38f4032535fda9a726d153b903098e68" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7524f7a154d0b13a1e895c56c832c376" category="inline-link">立即注册 NSS 帐户</block>
+  <block id="42216d007027bec4fe072e64e93bdc65" category="list-text">如果您尚未在 Cloud Manager 中注册 NSS 帐户，<block ref="bc2c9d3f2e75cd48cb0b55d3477b90f9" category="inline-link-rx"></block> 然后，将显示 Active IQ 数字顾问用户界面。</block>
+  <block id="48c7c08bdc82dde24c342aee125d0f2f" category="inline-link">有关详细信息，请参见此常见问题解答</block>
+  <block id="3fd1583fc67e0323cda8c48d28e7a1b0" category="admonition">截至 2021 年 12 月 3 日， NetApp 已采用一种新方法为 NSS 帐户注册凭据。<block ref="cb97e5fbd5823896c819a7579da8b62c" category="inline-link-rx"></block>。如果您的 NSS 帐户使用旧的凭据集，则需要将此帐户更新为新凭据。</block>
+  <block id="0a20c90d5270bed19fcaf851778c663b" category="section-title">下一步行动</block>
+  <block id="8aec6a2bcfb78af1fffa4f2c52dfe49d" category="inline-link">Active IQ 数字顾问文档</block>
+  <block id="21f0ca98c05681847062cb25ecc8fb48" category="paragraph">请参见<block ref="2abfe6afa62505308fadab43da217548" category="inline-link-rx"></block> 了解详细信息。</block>
+  <block id="def39ca4f33907811340e246db3f16d2" category="summary">通过 Cloud Manager 管理 NetApp AFF 和 FAS 系统，以配置存储，复制数据和配置基于云的关键数据服务。</block>
+  <block id="2631cea4d4184b173c4d7b153d959556" category="doc">内部 ONTAP 集群文档</block>
+  <block id="7ff191df90fac0fa94ab5c2b5101a5e9" category="sidebar">所有 Cloud Manager 文档</block>
+  <block id="9a30b78b07a6b42c9e4998f9c5d5640f" category="sidebar">内部 ONTAP 集群文档</block>
+  <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">发行说明</block>
+  <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">入门</block>
+  <block id="a1ebf612d281c8e7fb16bbfa253b9627" category="sidebar">发现 ONTAP 集群</block>
+  <block id="019323681c39b462d0fd30312fc741c2" category="sidebar">管理内部 ONTAP 集群</block>
+  <block id="8ad62e3eb63519f91a079cc6e3b60ae4" category="sidebar">管理内部 ONTAP 卷</block>
+  <block id="b23da3dd5cacf822f40ae17bb33e9245" category="sidebar">使用 Active IQ 数字顾问优化集群</block>
+  <block id="0edf67a4be59f702b9420db43194ad29" category="sidebar">使用 Active IQ 数据管理集群</block>
+  <block id="81563192c68b08feebdcc9a64a5e510b" category="sidebar">连接到内部集群</block>
+  <block id="0adc03eac86772ad2c75c8f140be417e" category="sidebar">知识和支持</block>
+  <block id="72d4138d424c03eaee16ca8b76b4263d" category="sidebar">查看已发现和未发现的内部集群</block>
+  <block id="5fef629b836b60819e0c0ce49cd2b9d7" category="sidebar">新增功能</block>
+  <block id="1c27e11c5e65b93611e6f5ce640f8184" category="sidebar">创建卷</block>
+  <block id="ef8e14c9c12dfb15fa021d5c96021bb8" category="sidebar">下载新的磁盘和磁盘架固件</block>
+  <block id="daefd0b150727ca9436d0c950172fd71" category="sidebar">使用 System Manager 和命令行界面管理内部 ONTAP 系统</block>
+  <block id="813011e2103649bb71f124adedcc10ea" category="sidebar">博客社区</block>
+  <block id="dd490b81914dd945601e442a41cb4222" category="sidebar">NetApp 社区</block>
+  <block id="ff6c37cbc252e306a6b4e390ec13cbc1" category="sidebar">Cloud Central 博客</block>
+  <block id="ad203e818e0c9d7f42f1c260b33875f3" category="sidebar">云网络研讨会</block>
+</blocks>
