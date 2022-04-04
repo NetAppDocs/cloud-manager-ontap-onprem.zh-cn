@@ -25,7 +25,7 @@ summary: 了解内部 ONTAP 集群的新增功能。
 
 现在，您可以查看内部 ONTAP 集群的清单及其硬件和服务合同到期日期。此外，我们还提供了有关这些集群的其他详细信息。
 
-link:task-discovering-ontap.html#viewing-cluster-information-and-contract-details["请参见如何查看此重要的内部集群信息"]。您需要为集群创建一个 NetApp 支持站点帐户（ NSS ），并且需要将 NSS 凭据附加到您的 Cloud Manager 帐户。
+https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html#viewing-cluster-information-and-contract-details["请参见如何查看此重要的内部集群信息"]。您需要为集群创建一个 NetApp 支持站点帐户（ NSS ），并且需要将 NSS 凭据附加到您的 Cloud Manager 帐户。
 
 
 

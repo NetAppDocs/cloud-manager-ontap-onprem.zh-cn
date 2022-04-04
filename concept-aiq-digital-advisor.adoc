@@ -57,7 +57,7 @@ image:screenshot_aiq_digital_advisor.png["Cloud Manager 中 Active IQ 数字顾�
 
 
 
-NOTE: 截至 2021 年 12 月 3 日， NetApp 已采用一种新方法为 NSS 帐户注册凭据。 https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/FAQs_for_NetApp_adoption_of_MS_Azure_AD_B2C_for_login["有关详细信息，请参见此常见问题解答"^]。如果您的 NSS 帐户使用旧的凭据集，则需要将此帐户更新为新凭据。
+NOTE: 截至 2021 年 12 月， NetApp 已采用一种新方法为 NSS 帐户注册凭据。 https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/FAQs_for_NetApp_adoption_of_MS_Azure_AD_B2C_for_login["有关详细信息，请参见此常见问题解答"^]。如果您的 NSS 帐户使用旧的凭据集，则需要将此帐户更新为新凭据。
 
 
 

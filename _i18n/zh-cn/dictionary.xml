@@ -96,18 +96,13 @@
   <block id="9b1f59bbde82cfc6467a99c2530b6993" category="paragraph">Cloud Manager 会发现集群并将其添加到 Canvas 中的工作环境。</block>
   <block id="1e54529331fefb19128d41707045a526" category="summary">了解内部 ONTAP 集群的新增功能。</block>
   <block id="25203f9c21dc384a4870095f19f67811" category="doc">内部 ONTAP 集群的新增功能</block>
-  <block id="f1c93420db258097a199364a47f6389a" category="section-title">2022 年 2 月 27 日</block>
   <block id="f25694bb9bc00e8fcfcc1a3c65dd482b" category="section-title">数字电子邮件中提供了一个 " 内部部署 ONTAP " 选项卡。</block>
   <block id="d3f07c4c7baf0c60bc64c1cdc48732af" category="paragraph">现在，您可以查看内部 ONTAP 集群的清单及其硬件和服务合同到期日期。此外，我们还提供了有关这些集群的其他详细信息。</block>
   <block id="184ca21b83c54a7ba12f9b1077ccb494" category="inline-link-macro">请参见如何查看此重要的内部集群信息</block>
-  <block id="2e75bdb3e0110a2699bbf1604ed481b5" category="paragraph"><block ref="c8b8a178761036798ad62f0cd5ecaa34" category="inline-link-macro-rx"></block>。您需要为集群创建一个 NetApp 支持站点帐户（ NSS ），并且需要将 NSS 凭据附加到您的 Cloud Manager 帐户。</block>
-  <block id="323b3f6bd6f8fad6e54ac5e1413cf3dc" category="section-title">2022 年 1 月 11 日</block>
   <block id="d69df284f21ccdf93082c4aaf0953b6d" category="section-title">您添加到内部 ONTAP 集群上的卷的标记可以与标记服务结合使用。</block>
   <block id="3686b84bef4027bfe5a11fcf472d8662" category="paragraph">添加到卷的标记现在与应用程序模板服务的标记功能相关联，该功能有助于您组织和简化资源管理。</block>
-  <block id="e7c5ad171298e38494ee7665c2b581e3" category="section-title">2021 年 11 月 28 日</block>
   <block id="feea05ef76a2f6f2d444dfab436c31c4" category="section-title">已简化内部 ONTAP 集群的创建卷向导</block>
   <block id="decff6be18712c90db61aad628609885" category="paragraph">我们重新设计了创建卷向导，以便于使用，现在您可以选择自定义导出策略。</block>
-  <block id="1758589feb07955b2d0a7b0b09d739c8" category="section-title">2021 年 3 月 8 日</block>
   <block id="4741d0181532f824e500e5fb61f113de" category="section-title">Active IQ 服务中提供的内部 ONTAP 集群信息</block>
   <block id="4daa302553b3da312bae6dd7eb61185b" category="inline-link-macro">发现集群</block>
   <block id="a0f0c23d7902a428b74d69d482ddd35f" category="list-text">当 Active IQ 显示内部集群列表（基于您的 NSS 帐户）时，您可以单击按钮 <block ref="6092f07e6002a33280f60ad47718209e" category="inline-link-macro-rx"></block> 并将其添加到 Cloud Manager Canvas 。这样可以更轻松地从 Cloud Manager 管理所有存储系统。</block>
@@ -316,7 +311,6 @@
   <block id="7524f7a154d0b13a1e895c56c832c376" category="inline-link">立即注册 NSS 帐户</block>
   <block id="42216d007027bec4fe072e64e93bdc65" category="list-text">如果您尚未在 Cloud Manager 中注册 NSS 帐户，<block ref="bc2c9d3f2e75cd48cb0b55d3477b90f9" category="inline-link-rx"></block> 然后，将显示 Active IQ 数字顾问用户界面。</block>
   <block id="48c7c08bdc82dde24c342aee125d0f2f" category="inline-link">有关详细信息，请参见此常见问题解答</block>
-  <block id="3fd1583fc67e0323cda8c48d28e7a1b0" category="admonition">截至 2021 年 12 月 3 日， NetApp 已采用一种新方法为 NSS 帐户注册凭据。<block ref="cb97e5fbd5823896c819a7579da8b62c" category="inline-link-rx"></block>。如果您的 NSS 帐户使用旧的凭据集，则需要将此帐户更新为新凭据。</block>
   <block id="0a20c90d5270bed19fcaf851778c663b" category="section-title">下一步行动</block>
   <block id="8aec6a2bcfb78af1fffa4f2c52dfe49d" category="inline-link">Active IQ 数字顾问文档</block>
   <block id="21f0ca98c05681847062cb25ecc8fb48" category="paragraph">请参见<block ref="2abfe6afa62505308fadab43da217548" category="inline-link-rx"></block> 了解详细信息。</block>
@@ -342,4 +336,10 @@
   <block id="dd490b81914dd945601e442a41cb4222" category="sidebar">NetApp 社区</block>
   <block id="ff6c37cbc252e306a6b4e390ec13cbc1" category="sidebar">Cloud Central 博客</block>
   <block id="ad203e818e0c9d7f42f1c260b33875f3" category="sidebar">云网络研讨会</block>
+  <block id="ba26e4556a0f160834687982b0479336" category="section-title">2022 年 2 月 27 日</block>
+  <block id="a70e816a0245e4c041fe696bc068fde8" category="paragraph"><block ref="cdf49294fa22fe97f3cd9774fbb3d925" category="inline-link-rx"></block>。您需要为集群创建一个 NetApp 支持站点帐户（ NSS ），并且需要将 NSS 凭据附加到您的 Cloud Manager 帐户。</block>
+  <block id="ef1bf4095b622ba80ac24b48b8e45eac" category="section-title">2022 年 1 月 11 日</block>
+  <block id="f61163b681442ac500a8018c87241770" category="section-title">2021 年 11 月 28 日</block>
+  <block id="dbbd746e2d2c019dcb0c3c40b74f4f75" category="section-title">2021 年 3 月 8 日</block>
+  <block id="748a389f24166595a5373d446b323287" category="admonition">截至 2021 年 12 月， NetApp 已采用一种新方法为 NSS 帐户注册凭据。<block ref="cb97e5fbd5823896c819a7579da8b62c" category="inline-link-rx"></block>。如果您的 NSS 帐户使用旧的凭据集，则需要将此帐户更新为新凭据。</block>
 </blocks>
