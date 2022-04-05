@@ -40,9 +40,6 @@ sidebar:
       url: "/task-get-help.html"
   - title: 法律声明
     url: "/legal-notices.html"
-product-family:
-  name: Cloud Manager
-  repo: cloud-manager-family
 homepage:
   tiles:
   - title: 入门
@@ -69,3 +66,4 @@ homepage:
       url: https://cloud.netapp.com/blog
     - title: 云网络研讨会
       url: https://cloud.netapp.com/events
+product-family: {}

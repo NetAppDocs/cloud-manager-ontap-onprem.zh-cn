@@ -6,6 +6,7 @@ summary: 'Cloud Manager 中的 " 发现 " 页面可显示内部环境中任何�
 ---
 = 使用 Active IQ 数据管理 ONTAP 集群
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

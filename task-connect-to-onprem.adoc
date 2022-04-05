@@ -6,6 +6,7 @@ summary: 如果您需要对内部 ONTAP 系统执行高级管理，可以使用 
 ---
 = 连接到内部 ONTAP 系统
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: 如果您不想再从 Cloud Manager 管理内部 ONTAP 工作环境，�
 ---
 = 删除内部 ONTAP 工作环境
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

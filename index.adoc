@@ -7,6 +7,7 @@ summary: 通过 Cloud Manager 管理 NetApp AFF 和 FAS 系统，以配置存储
 ---
 = 内部 ONTAP 集群文档
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

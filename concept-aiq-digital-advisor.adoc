@@ -6,6 +6,7 @@ summary: Active IQ 数字顾问集成在 Cloud Manager UI 中，因此您可以�
 ---
 = 使用 Active IQ 数字顾问优化集群
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
