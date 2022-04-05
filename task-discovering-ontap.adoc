@@ -84,7 +84,7 @@ image:screenshot_aiq_main_page.png["内部 ONTAP 集群的 \" 发现 \" 主页�
 
 
 
-NOTE: 如果您的支持合同到期，系统将从发现页面中删除。但是，您可以继续在其工作环境中管理这些系统。请参见操作说明 link:https://docs.netapp.com/us-en/active-iq/task-renew-support-contracts-for-your-systems.html["续订 Active IQ 数字顾问提供的支持合同"^]。
+NOTE: 如果您的支持合同到期，系统将从发现页面中删除。但是，您可以继续在其工作环境中管理这些系统。请参见操作说明 link:https://docs.netapp.com/us-en/active-iq/task_renew_support_contracts_for_your_systems.html["续订 Active IQ 数字顾问提供的支持合同"^]。
 
 
 

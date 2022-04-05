@@ -49,7 +49,6 @@
   <block id="04c986062f9c3ab6ca9967dac4c5be0d" category="paragraph"><block ref="04c986062f9c3ab6ca9967dac4c5be0d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b0ae438dbb700ffcab0b452edad46174" category="paragraph">此时将显示具有有效支持合同的 ONTAP 集群，并显示其状态为是否已在 Cloud Manager 中发现它们。</block>
   <block id="b5e4244593ae3713ba9c349b71c06182" category="inline-link-macro">续订 Active IQ 数字顾问提供的支持合同</block>
-  <block id="f58334fc97f74b0f9a5bd0fcab804d79" category="admonition">如果您的支持合同到期，系统将从发现页面中删除。但是，您可以继续在其工作环境中管理这些系统。请参见操作说明 <block ref="73ab273e50affbed0eaeebe6bee46665" category="inline-link-macro-rx"></block>。</block>
   <block id="7f50c223930d4a02cade2b9c75256f8f" category="section-title">查看集群信息和合同详细信息</block>
   <block id="e6dfd5017eebf97461338fa01b9cb076" category="paragraph">您可以使用 _Digital Walkes_ 查看集群详细信息以及硬件和软件合同状态。</block>
   <block id="7d8cc3d1d840829a8cdda42ed1f06341" category="list-text">在 * 数字电子邮件 * 中，单击 * 内部部署 ONTAP * 选项卡。</block>
@@ -342,4 +341,5 @@
   <block id="f61163b681442ac500a8018c87241770" category="section-title">2021 年 11 月 28 日</block>
   <block id="dbbd746e2d2c019dcb0c3c40b74f4f75" category="section-title">2021 年 3 月 8 日</block>
   <block id="748a389f24166595a5373d446b323287" category="admonition">截至 2021 年 12 月， NetApp 已采用一种新方法为 NSS 帐户注册凭据。<block ref="cb97e5fbd5823896c819a7579da8b62c" category="inline-link-rx"></block>。如果您的 NSS 帐户使用旧的凭据集，则需要将此帐户更新为新凭据。</block>
+  <block id="52d7343109a7ba661f3e64dd9602ee49" category="admonition">如果您的支持合同到期，系统将从发现页面中删除。但是，您可以继续在其工作环境中管理这些系统。请参见操作说明 <block ref="d9b78242359ad37ab7655d26c02f42fb" category="inline-link-macro-rx"></block>。</block>
 </blocks>
