@@ -28,8 +28,6 @@ sidebar:
       url: "/concept-aiq-digital-advisor.html"
     - title: 使用 Active IQ 数据管理集群
       url: "/task-managing-ontap.html"
-    - title: 连接到内部集群
-      url: "/task-connect-to-onprem.html"
     - title: 删除内部 ONTAP 工作环境
       url: "/task-remove-on-prem.html"
   - title: 知识和支持
@@ -56,8 +54,6 @@ homepage:
       url: task-provisioning-ontap.html
     - title: 下载新的磁盘和磁盘架固件
       url: task-managing-ontap.html#downloading-new-disk-and-shelf-firmware
-    - title: 使用 System Manager 和命令行界面管理内部 ONTAP 系统
-      url: task-connect-to-onprem.html
   - title: 博客社区
     links:
     - title: NetApp 社区
