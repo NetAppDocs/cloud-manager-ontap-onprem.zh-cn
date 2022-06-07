@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
   <head class="at-element-marker">
-  <title>使用 Active IQ 数据管理 ONTAP 集群 | NetApp Documentation</title>
+  <title>使用高级视图管理ONTAP | NetApp Documentation</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="使用 Active IQ 数据管理 ONTAP 集群 | NetApp Documentation" />
+  <meta property="og:title" content="使用高级视图管理ONTAP | NetApp Documentation" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/zh-cn/cloud-manager-ontap-onprem/task-managing-ontap.html" />
-	<meta property="og:description" content="Cloud Manager 中的 " 发现 " 页面可显示内部环境中任何未发现的 ONTAP 集群，任何集群是否需要更新磁盘或磁盘架固件，以及您是否正在使用购买内部系统时授予的所有 Cloud Volumes ONTAP 许可证。此信息由 Active IQ 数字顾问提供给 Cloud Manager 。" />
+	<meta property="og:url" content="https://docs.netapp.com/zh-cn/cloud-manager-ontap-onprem/task-administer-advanced-view.html" />
+	<meta property="og:description" content="如果您需要对ONTAP 内部集群执行高级管理、可以使用ONTAP 系统管理器执行此操作、该管理接口随ONTAP 系统提供。我们直接在Cloud Manager中提供了System Manager界面、因此您无需离开Cloud Manager进行高级管理。" />
   <meta property="og:image" content="https://docs.netapp.com/zh-cn/cloud-manager-ontap-onprem/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Cloud Manager 中的 " 发现 " 页面可显示内部环境中任何未发现的 ONTAP 集群，任何集群是否需要更新磁盘或磁盘架固件，以及您是否正在使用购买内部系统时授予的所有 Cloud Volumes ONTAP 许可证。此信息由 Active IQ 数字顾问提供给 Cloud Manager 。">
-  <meta name="keywords" content=" ontap, cluster, manage, fas, aff, active iq, shelf firmware, disk firmware, CVO licenses"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="如果您需要对ONTAP 内部集群执行高级管理、可以使用ONTAP 系统管理器执行此操作、该管理接口随ONTAP 系统提供。我们直接在Cloud Manager中提供了System Manager界面、因此您无需离开Cloud Manager进行高级管理。">
+  <meta name="keywords" content=" system manager, advanced view, access system manager, load system manager, use system manager"><!-- Icons -->
   <link rel="icon" href="/zh-cn/cloud-manager-ontap-onprem/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/zh-cn/cloud-manager-ontap-onprem/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -169,7 +169,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-ontap-onprem/issues/new?body=Page%3A%20[使用 Active IQ 数据管理 ONTAP 集群](https://docs.netapp.com/zh-cn/cloud-manager-ontap-onprem/task-managing-ontap.html)" class="page-nav-contribute-link" role="button"><img src="/zh-cn/cloud-manager-ontap-onprem/images/discuss-sm.svg" class="github-icon" />请求文档变更</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-ontap-onprem/blob/main/task-managing-ontap.adoc" class="page-nav-contribute-link" role="button"><img src="/zh-cn/cloud-manager-ontap-onprem/images/edit-sm.svg" class="github-icon" />在 GitHub 上编辑</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/zh-cn/cloud-manager-ontap-onprem/images/article-sm.svg" class="github-icon" />提供者指南</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-ontap-onprem/issues/new?body=Page%3A%20[使用高级视图管理ONTAP](https://docs.netapp.com/zh-cn/cloud-manager-ontap-onprem/task-administer-advanced-view.html)" class="page-nav-contribute-link" role="button"><img src="/zh-cn/cloud-manager-ontap-onprem/images/discuss-sm.svg" class="github-icon" />请求文档变更</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-ontap-onprem/blob/main/task-administer-system-manager.adoc" class="page-nav-contribute-link" role="button"><img src="/zh-cn/cloud-manager-ontap-onprem/images/edit-sm.svg" class="github-icon" />在 GitHub 上编辑</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/zh-cn/cloud-manager-ontap-onprem/images/article-sm.svg" class="github-icon" />提供者指南</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">在此页面上</div>
@@ -288,15 +288,15 @@
       </div>
 
       <ul class="custom-dropdown-menu"><li>
-          <a href="https://docs.netapp.com/zh-cn/cloud-manager-ontap-onprem/task-managing-ontap.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+          <a href="https://docs.netapp.com/zh-cn/cloud-manager-ontap-onprem/task-administer-advanced-view.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-managing-ontap.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-administer-advanced-view.html" target="_self"><span translate="no" class="notranslate">English</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/ja-jp/cloud-manager-ontap-onprem/task-managing-ontap.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+          <a href="https://docs.netapp.com/ja-jp/cloud-manager-ontap-onprem/task-administer-advanced-view.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/zh-tw/cloud-manager-ontap-onprem/task-managing-ontap.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+          <a href="https://docs.netapp.com/zh-tw/cloud-manager-ontap-onprem/task-administer-advanced-view.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/ko-kr/cloud-manager-ontap-onprem/task-managing-ontap.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+          <a href="https://docs.netapp.com/ko-kr/cloud-manager-ontap-onprem/task-administer-advanced-view.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
         </li></ul>
     </div><!-- End Language Selector -->
 
@@ -401,12 +401,8 @@
           
 
 
-
-
-
-
     <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
-  <a target="_blank" href="/zh-cn/cloud-manager-ontap-onprem/pdfs/pages/task-managing-ontap.pdf" >
+  <a target="_blank" href="/zh-cn/cloud-manager-ontap-onprem/pdfs/pages/task-administer-advanced-view.pdf" >
     <img src="/zh-cn/cloud-manager-ontap-onprem/images/pdf.png" width="16" height="16"/>
     PDF of this page
   </a>
@@ -414,6 +410,10 @@
 
 </ul>
   
+
+
+
+
 
 
 
@@ -511,11 +511,11 @@
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-ontap-onprem/task-provisioning-ontap.html">
         管理内部 ONTAP 卷
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-ontap-onprem/task-administer-advanced-view.html">
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-ontap-onprem/task-administer-advanced-view.html">
         使用System Manager进行管理
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-ontap-onprem/concept-aiq-digital-advisor.html">
         使用 Active IQ 数字顾问优化集群
-      </a></li><li class="  active "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-ontap-onprem/task-managing-ontap.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-ontap-onprem/task-managing-ontap.html">
         使用 Active IQ 数据管理集群
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-ontap-onprem/task-remove-on-prem.html">
         删除内部 ONTAP 工作环境
@@ -590,14 +590,14 @@
     </div>
   </span>
 </div><div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">使用 Active IQ 数据管理 ONTAP 集群</h1>
+  <h1 class="n-doc__component-detail-heading">使用高级视图管理ONTAP</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-04-18 07:48:19 +0000">04/18/2022</time>
+    <time datetime="2022-06-07 13:59:48 +0000">06/07/2022</time>
     
   
 
@@ -606,229 +606,155 @@
 
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph lead">
+<p>如果您需要对ONTAP 内部集群执行高级管理、可以使用ONTAP 系统管理器执行此操作、该管理接口随ONTAP 系统提供。我们直接在Cloud Manager中提供了System Manager界面、因此您无需离开Cloud Manager进行高级管理。</p>
+</div>
 <div class="paragraph">
-<p>Cloud Manager 中的 " 发现 " 页面可显示内部环境中任何未发现的 ONTAP 集群，任何集群是否需要更新磁盘或磁盘架固件，以及您是否正在使用购买内部系统时授予的所有 Cloud Volumes ONTAP 许可证。此信息从提供给 Cloud Manager <a href="https://docs.netapp.com/us-en/active-iq/index.html" target="_blank" rel="noopener">"Active IQ 数字顾问"</a>。</p>
+<p>此高级视图可作为预览版使用。我们计划改进此体验、并在即将发布的版本中添加增强功能。请通过产品内聊天向我们发送反馈。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="查看未使用的基于-cloud-volumes-ontap-节点的许可证">查看未使用的基于 Cloud Volumes ONTAP 节点的许可证</h2>
+<h2 id="功能">功能</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>您购买的许多内部 ONTAP 存储系统软件包都附带了基于 Cloud Volumes ONTAP 节点的免费许可证，因此您可以在 Cloud Manager 中试用 NetApp 云存储产品。您可以使用此许可证创建新的 Cloud Volumes ONTAP 实例，也可以将此许可证应用于现有 Cloud Volumes ONTAP 实例以将容量扩展 368 TiB 。</p>
-</div>
-<div class="paragraph">
-<p>您可以根据 NetApp 支持站点凭据查看是否有任何未使用的 Cloud Volumes ONTAP 许可证。</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-ontap-onprem/images/tip.svg" alt="提示">
-</td>
-<td class="content">
-基于节点的许可证的有效期从下个月的第一天开始。例如，如果您在 2021 年 12 月 15 日获得基于节点的 BYOL 许可证，则许可证期限从 2022 年 1 月 1 日（下个月的第一天）开始。
-</td>
-</tr>
-</table>
-</div>
-<div class="olist arabic">
-<div class="title">步骤</div>
-<ol class="arabic">
-<li>
-<p>在 Cloud Manager 中，单击 * 发现 * 选项卡。</p>
-</li>
-<li>
-<p>单击页面下部的 * 许可证 * 选项卡。</p>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_aiq_licenses.png" alt="已用和未使用的 Cloud Volumes ONTAP 许可证的屏幕截图。"></span></p>
-</div>
-<div class="paragraph">
-<p>对于每个未使用的许可证，将显示一个 * 使用许可证 * 按钮。</p>
-</div>
-</li>
-<li>
-<p>如果要激活并开始使用此许可证，请单击 * 使用许可证 * 。</p>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_aiq_use_license.png" alt="两个使用许可证选项的屏幕截图。"></span></p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>请参见以下任务，了解使用可用许可证的选项。</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="使用未使用的-cloud-volumes-ontap-许可证">使用未使用的 Cloud Volumes ONTAP 许可证</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>您可以使用未使用的许可证创建新的 Cloud Volumes ONTAP 实例或扩展现有 Cloud Volumes ONTAP 实例上的许可证容量。许可证容量为 368 TiB 。</p>
-</div>
-<div class="paragraph">
-<p>"_expisates" 列指示许可证处于活动状态的最后一天。创建新的 Cloud Volumes ONTAP 系统时，此日期为许可证到期日期。更新现有 Cloud Volumes ONTAP 系统时，此选项表示现有许可证的延长时间长度。</p>
-</div>
-<div class="paragraph">
-<p><em>License Type</em> ， <em>Hypercaler</em> 和 <em>Model Type</em> 列说明了其 Cloud Volumes ONTAP 许可证的类型。例如， * 自带许可证（ BYOL ） | 单个许可证（ Azure ） * 表示此许可证是部署在 Microsoft Azure 中的 " 单节点 " Cloud Volumes ONTAP 系统的 " 自带许可证 " 。表中显示了此列中可能显示的值。</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">列</th>
-<th class="tableblock halign-left valign-top">值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">许可证类型</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PAYGO BYOL</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">超大规模云提供商</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Azure AWS GCP 所有提供商</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">型号类型</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">单个 HA</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>创建 <em>new</em> Cloud Volumes ONTAP 系统时，这是要部署的系统类型。例如，使用示例许可证（ * BYOL | Single | Azure* ），您可以在 Azure 中创建一个单节点 Cloud Volumes ONTAP 系统，其授权高达 368 TiB 。此许可证不能用于创建 HA 系统或在 AWS 中部署实例。</p>
-</div>
-<div class="paragraph">
-<p>更新 <em>existent</em> Cloud Volumes ONTAP 系统时，这表示可以扩展其现有许可证容量的系统类型。再次使用示例许可证，您可以延长 Azure 中任何单节点 Cloud Volumes ONTAP 系统的许可证。此许可证不能用于扩展 HA 系统或 AWS 中部署的实例的许可证。</p>
-</div>
-<div class="sect2">
-<h3 id="使用未使用的许可证创建新的-cloud-volumes-ontap-系统">使用未使用的许可证创建新的 Cloud Volumes ONTAP 系统</h3>
-<div class="paragraph">
-<p>按照以下步骤使用未使用的许可证创建新的 Cloud Volumes ONTAP 实例。</p>
-</div>
-<div class="olist arabic">
-<div class="title">步骤</div>
-<ol class="arabic">
-<li>
-<p>单击 * 使用许可证 * 并选择 * 对新 Cloud Volumes ONTAP 使用许可证 * 。</p>
-</li>
-<li>
-<p>在 "Use License&#8230;&#8203;" 页面中，验证许可证信息，然后单击 * 使用许可证 * 。</p>
-<div class="paragraph">
-<p>在大多数情况下，系统会将您定向到 * 详细信息和凭据 * 页面，以便为 Cloud Volumes ONTAP 系统创建工作环境，因为云提供程序和节点数均由许可证定义。</p>
-</div>
-<div class="paragraph">
-<p>如果您正在使用定义为 " 所有提供程序 " 的许可证，则系统会将您定向到 * 选择位置 * 页面，以便您可以先选择云提供程序，然后再完成 * 详细信息和凭据 * 页面。</p>
-</div>
-</li>
-<li>
-<p>按照以下步骤创建工作环境和第一个卷。</p>
-<div class="paragraph">
-<p>根据要部署 Cloud Volumes ONTAP 系统的云提供商，请参见以下各节。</p>
+<p>通过Cloud Manager中的高级视图、您可以访问其他管理功能：</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html" target="_blank" rel="noopener">"在 Azure 中启动 Cloud Volumes ONTAP"</a></p>
+<p>高级存储管理</p>
+<div class="paragraph">
+<p>管理一致性组、共享、qtree、配额和Storage VM。</p>
+</div>
 </li>
 <li>
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html" target="_blank" rel="noopener">"在 AWS 中启动 Cloud Volumes ONTAP"</a></p>
+<p>网络管理</p>
+<div class="paragraph">
+<p>管理IP空间、网络接口、端口集和以太网端口。</p>
+</div>
 </li>
 <li>
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html" target="_blank" rel="noopener">"在 GCP 中启动 Cloud Volumes ONTAP"</a></p>
+<p>事件和作业</p>
+<div class="paragraph">
+<p>查看事件日志、系统警报、作业和审核日志。</p>
+</div>
+</li>
+<li>
+<p>高级数据保护</p>
+<div class="paragraph">
+<p>保护Storage VM、LUN和一致性组。</p>
+</div>
+</li>
+<li>
+<p>主机管理</p>
+<div class="paragraph">
+<p>设置SAN启动程序组和NFS客户端。</p>
+</div>
 </li>
 </ul>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="扩展现有-cloud-volumes-ontap-系统的许可证容量">扩展现有 Cloud Volumes ONTAP 系统的许可证容量</h3>
-<div class="paragraph">
-<p>如果您当前部署的 Cloud Volumes ONTAP 系统符合其中一个免费许可证的许可证要求（即相同的云提供商，节点数等），则可以按照以下步骤将许可证容量扩展 368 TiB 。</p>
-</div>
-<div class="olist arabic">
-<div class="title">步骤</div>
-<ol class="arabic">
-<li>
-<p>单击 * 使用许可证 * 并选择 * 向现有 Cloud Volumes ONTAP 添加许可证 * 。</p>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_aiq_extend_license.png" alt="用于向现有 Cloud Volumes ONTAP 系统添加许可证的添加许可证对话框的屏幕截图。"></span></p>
-</div>
-</li>
-<li>
-<p>在 " 添加许可证 &#8230;&#8203;" 页面中，选择要扩展许可证的 Cloud Volumes ONTAP 系统，然后单击 * 添加许可证 * 。</p>
-<div class="paragraph">
-<p>此时将显示确认对话框。</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_aiq_license_added.png" alt="显示许可证已添加到 Cloud Volumes ONTAP 系统的屏幕截图。"></span></p>
-</div>
-</li>
-<li>
-<p>您可以单击 * 关闭 * 以关闭此窗口并返回到 " 发现 " 页面，也可以单击此链接以转到 Cloud Volumes ONTAP 许可页面以查看有关该系统许可的更多详细信息。</p>
-</li>
-</ol>
-</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="正在下载新的磁盘和磁盘架固件">正在下载新的磁盘和磁盘架固件</h2>
+<h2 id="支持的配置">支持的配置</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>您可以查看发现的任何 ONTAP 集群是否需要更新其磁盘架或磁盘固件。您可以下载 Ansible 攻略手册来升级固件。</p>
+<p>运行9.10.0或更高版本的内部ONTAP 集群支持通过System Manager进行高级管理。</p>
+</div>
+<div class="paragraph">
+<p>在GovCloud地区或无法访问出站Internet的地区不支持System Manager集成。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="限制">限制</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>使用Cloud Manager中的高级视图时、内部ONTAP 集群不支持某些System Manager功能：</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>注： * 只有在订阅了某些支持计划后，才能查看和下载新固件。</p>
+<p>集群设置</p>
+<div class="paragraph">
+<p>在内部ONTAP 集群上设置管理IP地址并配置管理员密码后、您可以在Cloud Manager中发现集群、然后从高级视图继续设置集群。</p>
+</div>
+</li>
+<li>
+<p>Cloud Backup激活</p>
+<div class="paragraph">
+<p>直接从Cloud Backup在内部集群上启用Cloud Backup。 <a href="https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-ontap-backup-to-cloud.html" target="_blank" rel="noopener">"了解如何开始使用"</a>。</p>
+</div>
+</li>
+<li>
+<p>按需升级</p>
+<div class="paragraph">
+<p>无法按需升级固件和软件。</p>
+</div>
+</li>
+<li>
+<p>基于角色的访问控制</p>
+<div class="paragraph">
+<p>不支持从System Manager进行基于角色的访问控制。</p>
+</div>
 </li>
 </ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="如何开始使用">如何开始使用</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>打开内部ONTAP 工作环境、然后单击高级视图选项。</p>
 </div>
 <div class="olist arabic">
 <div class="title">步骤</div>
 <ol class="arabic">
 <li>
-<p>在发现页面中，单击 * 固件更新 * 选项卡。</p>
+<p>在"画布"页面上、双击内部ONTAP 工作环境的名称。</p>
+</li>
+<li>
+<p>在右上角、单击*切换到高级视图*。</p>
 <div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_aiq_firmware.png" alt="&quot;Discovery&quot; 页面的屏幕截图，其中显示了需要更新固件的节点。"></span></p>
-</div>
-<div class="paragraph">
-<p>如果任何集群需要新固件，则会显示 * 全部下载 * 按钮。</p>
+<p><span class="image"><img src="./media/screenshot-advanced-view.png" alt="内部ONTAP 工作环境的屏幕截图、其中显示了切换到高级视图选项。"></span></p>
 </div>
 </li>
 <li>
-<p>单击 * 全部下载 * 并保存 zip 文件。</p>
+<p>如果显示确认消息、请通读该消息并单击*关闭*。</p>
 </li>
 <li>
-<p>解压缩此 zip 文件，并按照以下说明进行操作 <a href="https://aiq.netapp.com/assets/docs/Quick_Reference_Guide.pdf" target="_blank" rel="noopener">"更新存储系统固件"</a>。</p>
+<p>使用System Manager管理ONTAP。</p>
+</li>
+<li>
+<p>如果需要、请单击*切换到标准视图*以通过Cloud Manager返回到标准管理。</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot-standard-view.png" alt="内部ONTAP 工作环境的屏幕截图、其中显示了切换到标准视图选项。"></span></p>
+</div>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p>固件已更新。ONTAP 系统下次向 Active IQ 发送 AutoSupport 消息时， <em>Firmware Updates</em> 页面中的状态将更新，以显示不再需要更新。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="查看适用于云的内部工作负载">查看适用于云的内部工作负载</h2>
+<h2 id="有关使用system-manager的帮助">有关使用System Manager的帮助</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>某些工作负载或卷最适合从内部 ONTAP 集群迁移到 Cloud Volumes ONTAP 系统。其中一些优势包括降低成本，提高性能和故障恢复能力。"_Cloud Ready Workloads _ " 选项卡列出了已发现的 ONTAP 集群中的这些工作负载。</p>
+<p>如果在ONTAP 中使用System Manager需要帮助、请参见 <a href="https://docs.netapp.com/us-en/ontap/index.html" target="_blank" rel="noopener">"ONTAP 文档"</a> 了解分步说明。以下链接可能会有所帮助：</p>
 </div>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_aiq_workloads.png" alt="显示可移动到云的内部集群中的工作负载的屏幕截图。"></span></p>
-</div>
-<div class="paragraph">
-<p>此页面上显示的受支持工作负载包括： SAP ， SAP HANA ， Oracle ，文件共享和 SharePoint 。</p>
-</div>
-<div class="paragraph">
-<p><em>lift and shifT</em> 是一种将应用程序迁移到云的方法。这意味着无需重新设计应用程序，即可将应用程序及其关联数据迁移到云平台。请参见有关的详细信息 <a href="https://www.netapp.com/knowledge-center/what-is-lift-and-shift/" target="_blank" rel="noopener">"提升和移动"</a>。</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.netapp.com/us-en/ontap/volume-admin-overview-concept.html" target="_blank" rel="noopener">"卷和LUN管理"</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/ontap/network-manage-overview-concept.html" target="_blank" rel="noopener">"网络管理"</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/ontap/concept_dp_overview.html" target="_blank" rel="noopener">"数据保护"</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
