@@ -256,29 +256,6 @@
   <block id="06ed7fc16cefcce74b94962584869b39" category="paragraph"><block ref="240bb627dd9982017efa6d3b711a39ad" category="inline-link-rx"></block>。</block>
   <block id="ce21e7ae4271271294ccbf54c8fd6864" category="summary">NetApp 通过多种方式为 Cloud Manager 提供支持。全天候提供丰富的免费自助支持选项，例如知识库（ KB ）文章和社区论坛。您的支持注册包括通过 Web 服务单提供的远程技术支持。</block>
   <block id="fabfc25ef8996fd90836e58a4c0b26b6" category="doc">获取帮助</block>
-  <block id="b151b3ad7000d170a09f91975e26bf45" category="summary">如果您需要对内部 ONTAP 系统执行高级管理，可以使用 ONTAP 系统管理器或命令行界面执行此操作。</block>
-  <block id="6d0824d1c808525b64d6b584ae3a8175" category="doc">连接到内部 ONTAP 系统</block>
-  <block id="bd6791b739d936827d0be68a00c193da" category="section-title">连接到 System Manager</block>
-  <block id="e9981bacbcd5ea480a3cacf7d804b6cc" category="paragraph">您可能需要从 System Manager 执行一些内部部署 ONTAP 任务， System Manager 是一种基于浏览器的管理工具，可在集群上运行。</block>
-  <block id="ec94e3c72dd4a57a61fc48219f606995" category="paragraph">要从中访问 Cloud Manager 的计算机必须与内部 ONTAP 系统建立网络连接。例如，您可能需要从内部网络中的跳转主机登录到 Cloud Manager 。</block>
-  <block id="b942f0c9a0122357a68d35d76ab18fff" category="list-text">在 " 画布 " 页面中，双击要使用 System Manager 管理的内部 ONTAP 系统。</block>
-  <block id="cb4fcd5786332ca0e73ec9ae0b1d43e7" category="list-text">单击菜单图标，然后单击 * 系统管理器 * 。</block>
-  <block id="3eab8ee0f45fd9624973c05ec4303d5a" category="list-text">单击 * 启动 * 。</block>
-  <block id="7587c6609566a034156659b2141e3de1" category="paragraph">System Manager 将在新的浏览器选项卡中加载。</block>
-  <block id="84a670db3237cb6e7874ef079ba39fe4" category="list-text">在登录屏幕上，输入创建集群时指定的管理员用户的用户名和密码，然后单击 * 登录 * 。</block>
-  <block id="304e0c9f87006647e7b7cb69233dbe66" category="paragraph">系统管理器控制台即会加载。现在，您可以使用它来管理内部 ONTAP 系统。</block>
-  <block id="31c2c11de9569969822fd820af45d8ac" category="section-title">连接到 ONTAP 命令行界面</block>
-  <block id="4e107e465b3e776fcb07ca6e5f56265f" category="paragraph">ONTAP 命令行界面可用于运行所有管理命令，也是执行高级任务或使用命令行界面更自如的理想选择。您可以使用 Secure Shell （ SSH ）连接到 CLI 。</block>
-  <block id="e6ad06bd1420173d20b58a9a17dd8153" category="paragraph">使用 SSH 连接到内部 ONTAP 系统的主机必须与内部 ONTAP 系统建立网络连接。例如，您可能需要使用内部网络中跨接主机的 SSH 。</block>
-  <block id="6ad94be4e63b3d4783fdd1f854b7bbdf" category="list-text">在 Cloud Manager 中，确定集群管理界面的 IP 地址：</block>
-  <block id="4820059dd9647a62e3d49d6805dc17ef" category="list-text">在 " 画布 " 页面上，选择内部 ONTAP 系统。</block>
-  <block id="23c2e641ffa866a42c848c9f2c90ecd1" category="list-text">单击 <block ref="a74720392297d66ac1ab9a90296912c9" category="inline-image-macro-rx" type="image"></block> 并复制集群管理 IP 地址。</block>
-  <block id="58cab5452c4b6c92c8dd75e357433c83" category="list-text">使用 SSH 使用管理员帐户连接到集群管理接口 IP 地址。</block>
-  <block id="938f1047c15f00fdd0cbfc8e4cfa15e1" category="paragraph">* 示例 *</block>
-  <block id="ed9663bc6832f99d5a7f57ceca04eed7" category="paragraph">下图显示了使用 PuTTY 的示例：</block>
-  <block id="a9981641e36e0e304ba5071a1d3b4273" category="inline-image-macro">屏幕截图显示了端口 22 上的目标 admin@192.168.11 5 。</block>
-  <block id="7a9bcdad1d59400ff7c688cda722d3e6" category="paragraph"><block ref="7a9bcdad1d59400ff7c688cda722d3e6" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="2180cb7bd670dcd385a7b5e609212943" category="list-text">在登录提示符处，输入管理员帐户的密码。</block>
   <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">法律声明</block>
   <block id="4940124e8487cb4ea36f1511a195cf66" category="inline-link-macro">有关 Cloud Manager 3.9 的注意事项</block>
   <block id="c069fcc68c5dfa73ccc99924c836cae9" category="list-text"><block ref="c069fcc68c5dfa73ccc99924c836cae9" category="inline-link-macro-rx"></block></block>
@@ -311,7 +288,6 @@
   <block id="21f0ca98c05681847062cb25ecc8fb48" category="paragraph">请参见<block ref="2abfe6afa62505308fadab43da217548" category="inline-link-rx"></block> 了解详细信息。</block>
   <block id="def39ca4f33907811340e246db3f16d2" category="summary">通过 Cloud Manager 管理 NetApp AFF 和 FAS 系统，以配置存储，复制数据和配置基于云的关键数据服务。</block>
   <block id="2631cea4d4184b173c4d7b153d959556" category="doc">内部 ONTAP 集群文档</block>
-  <block id="7ff191df90fac0fa94ab5c2b5101a5e9" category="sidebar">所有 Cloud Manager 文档</block>
   <block id="9a30b78b07a6b42c9e4998f9c5d5640f" category="sidebar">内部 ONTAP 集群文档</block>
   <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">发行说明</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">入门</block>
@@ -320,13 +296,11 @@
   <block id="8ad62e3eb63519f91a079cc6e3b60ae4" category="sidebar">管理内部 ONTAP 卷</block>
   <block id="b23da3dd5cacf822f40ae17bb33e9245" category="sidebar">使用 Active IQ 数字顾问优化集群</block>
   <block id="0edf67a4be59f702b9420db43194ad29" category="sidebar">使用 Active IQ 数据管理集群</block>
-  <block id="81563192c68b08feebdcc9a64a5e510b" category="sidebar">连接到内部集群</block>
   <block id="0adc03eac86772ad2c75c8f140be417e" category="sidebar">知识和支持</block>
   <block id="72d4138d424c03eaee16ca8b76b4263d" category="sidebar">查看已发现和未发现的内部集群</block>
   <block id="5fef629b836b60819e0c0ce49cd2b9d7" category="sidebar">新增功能</block>
   <block id="1c27e11c5e65b93611e6f5ce640f8184" category="sidebar">创建卷</block>
   <block id="ef8e14c9c12dfb15fa021d5c96021bb8" category="sidebar">下载新的磁盘和磁盘架固件</block>
-  <block id="daefd0b150727ca9436d0c950172fd71" category="sidebar">使用 System Manager 和命令行界面管理内部 ONTAP 系统</block>
   <block id="813011e2103649bb71f124adedcc10ea" category="sidebar">博客社区</block>
   <block id="dd490b81914dd945601e442a41cb4222" category="sidebar">NetApp 社区</block>
   <block id="ff6c37cbc252e306a6b4e390ec13cbc1" category="sidebar">Cloud Central 博客</block>
@@ -388,4 +362,59 @@
   <block id="bece28b158ab337d9ed24b00d7d02cc7" category="list-text">单击 * 致电我们 * 可查找 NetApp 技术支持的电话号码。</block>
   <block id="efe81cff8e6f47ec59ef94167b76bf5a" category="list-text">单击 * 打开问题描述 * ，选择一个选项，然后单击 * 发送 * 。</block>
   <block id="cbb1040836732e478409dacf7e45171a" category="paragraph">NetApp 代表将审核您的案例，并尽快与您联系。</block>
+  <block id="f8b475a3fefebada77a30229238d0a1a" category="section-title">2022年6月7日</block>
+  <block id="4f03a5c652641013d1e43811930f5769" category="paragraph">连接器3.9.19版引入了以下更改。</block>
+  <block id="ffe3ec3b5faef58a758d9449470882a0" category="section-title">新建高级视图</block>
+  <block id="5549a52d6578bcb66138c7319ef4ea11" category="paragraph">如果您需要对ONTAP 内部集群执行高级管理、可以使用ONTAP 系统管理器执行此操作、该管理接口随ONTAP 系统提供。我们直接在Cloud Manager中提供了System Manager界面、因此您无需离开Cloud Manager进行高级管理。</block>
+  <block id="99721ad2e6d601b2966a9d9e1c7de770" category="paragraph">对于运行9.10.0或更高版本的内部ONTAP 集群、此高级视图为预览视图。我们计划改进此体验、并在即将发布的版本中添加增强功能。请通过产品内聊天向我们发送反馈。</block>
+  <block id="f303a87fe6efba259b752f5a9e11064b" category="inline-link-macro">了解有关高级视图的更多信息</block>
+  <block id="0c6e9220b6dd38f763ce6082c0125be9" category="paragraph"><block ref="cf41d716430563f350a841f38af568db" category="inline-link-macro-rx"></block>。</block>
+  <block id="d7ce0ccf910efd77ec00e6d9bde719ca" category="doc">使用高级视图管理ONTAP</block>
+  <block id="74593b49f99b6e21d38ca3d969b213f3" category="paragraph">此高级视图可作为预览版使用。我们计划改进此体验、并在即将发布的版本中添加增强功能。请通过产品内聊天向我们发送反馈。</block>
+  <block id="98a1dd953dfcb1729fd4013fc440cb56" category="paragraph">通过Cloud Manager中的高级视图、您可以访问其他管理功能：</block>
+  <block id="f3c3ee89c80d32726f5f937c07631d1c" category="list-text">高级存储管理</block>
+  <block id="81988711ef6c9af40c8e8973f25c0bed" category="paragraph">管理一致性组、共享、qtree、配额和Storage VM。</block>
+  <block id="62735a856683757bf28f1f02f97c151c" category="list-text">网络管理</block>
+  <block id="90aa7b1e6da20918b753d835fd9d28fb" category="paragraph">管理IP空间、网络接口、端口集和以太网端口。</block>
+  <block id="5da3380058f326675f5268466ae0c24f" category="list-text">事件和作业</block>
+  <block id="59536015b2a8a8d499cbe947387acb5e" category="paragraph">查看事件日志、系统警报、作业和审核日志。</block>
+  <block id="3f20b3134627198be1e0ff879a88cd8f" category="list-text">高级数据保护</block>
+  <block id="18edb92cf2cbf5a1d60be48cff4de617" category="paragraph">保护Storage VM、LUN和一致性组。</block>
+  <block id="f17e729a409e6c0faa3ddab50e856b07" category="list-text">主机管理</block>
+  <block id="36eae32729ecc4b53ba38b252bc6b356" category="paragraph">设置SAN启动程序组和NFS客户端。</block>
+  <block id="1f0b82560627b660c6c6958a1df834b8" category="section-title">支持的配置</block>
+  <block id="8cc569c03bd345c450afe055c793f724" category="paragraph">运行9.10.0或更高版本的内部ONTAP 集群支持通过System Manager进行高级管理。</block>
+  <block id="0f1ca4e2133610fdc8b23e4db3f7cb0c" category="paragraph">在GovCloud地区或无法访问出站Internet的地区不支持System Manager集成。</block>
+  <block id="e646e16bee8b32e6ea29e30d01970a6c" category="section-title">限制</block>
+  <block id="1cca9df183cdd1916b224eb02b7018d7" category="paragraph">使用Cloud Manager中的高级视图时、内部ONTAP 集群不支持某些System Manager功能：</block>
+  <block id="e710f9addfdf1e48c1320d497696c4fc" category="list-text">集群设置</block>
+  <block id="95bf9ececffac617e1447cb41cbed6ca" category="paragraph">在内部ONTAP 集群上设置管理IP地址并配置管理员密码后、您可以在Cloud Manager中发现集群、然后从高级视图继续设置集群。</block>
+  <block id="bec7e4750178c449b47b3663cb2804ea" category="list-text">Cloud Backup激活</block>
+  <block id="7d782479a41a3941b57cc7c2b60d318a" category="inline-link">了解如何开始使用</block>
+  <block id="4bd7d8add0f25e108898d306e19a3841" category="paragraph">直接从Cloud Backup在内部集群上启用Cloud Backup。<block ref="d78fdae783f693d400093119494a670a" category="inline-link-rx"></block>。</block>
+  <block id="dc7f30ec5bd878efd2189fe1b0703118" category="list-text">按需升级</block>
+  <block id="729efe039f733cfbcd1a94fd02a8b2c6" category="paragraph">无法按需升级固件和软件。</block>
+  <block id="01ab8fe0565c01eb93456b579d969d66" category="list-text">基于角色的访问控制</block>
+  <block id="83f5656d14cbf1628e806237dd016ac6" category="paragraph">不支持从System Manager进行基于角色的访问控制。</block>
+  <block id="07e1d66babe77070cc76a4e637c9f26d" category="section-title">如何开始使用</block>
+  <block id="bbd3883401d7cab6239afc1bb95269c5" category="paragraph">打开内部ONTAP 工作环境、然后单击高级视图选项。</block>
+  <block id="30712363115d96bac17774981ad3a874" category="list-text">在"画布"页面上、双击内部ONTAP 工作环境的名称。</block>
+  <block id="a31b079030fd3d406e06a9ce180abf58" category="list-text">在右上角、单击*切换到高级视图*。</block>
+  <block id="0966bd9c118ee81138ac447c7ed4a14f" category="inline-image-macro">内部ONTAP 工作环境的屏幕截图、其中显示了切换到高级视图选项。</block>
+  <block id="6665a86ade0699adb15fb4e2f3d44fbb" category="paragraph"><block ref="6665a86ade0699adb15fb4e2f3d44fbb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="74d668d6c47cd0c55c4ff8f77ad621bd" category="list-text">如果显示确认消息、请通读该消息并单击*关闭*。</block>
+  <block id="2384fee5ec28c392c4824455705673ad" category="list-text">使用System Manager管理ONTAP。</block>
+  <block id="ebd8c98f714943a83d08bf245c867de2" category="list-text">如果需要、请单击*切换到标准视图*以通过Cloud Manager返回到标准管理。</block>
+  <block id="54cf4bb0cf2034f534f1bd85ab4a6bb0" category="inline-image-macro">内部ONTAP 工作环境的屏幕截图、其中显示了切换到标准视图选项。</block>
+  <block id="922a5d434113f5026172e4d3ab5969a9" category="paragraph"><block ref="922a5d434113f5026172e4d3ab5969a9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9091c5cdacecb3d4082594d5d5a31855" category="section-title">有关使用System Manager的帮助</block>
+  <block id="eb75aeb3b4b2b9734ba3e52f5483f0b2" category="inline-link">ONTAP 文档</block>
+  <block id="9c1bd416df0d466347865d11e934dec2" category="paragraph">如果在ONTAP 中使用System Manager需要帮助、请参见<block ref="e4712fca3ed0fd9138bc58dbf36327e9" category="inline-link-rx"></block> 了解分步说明。以下链接可能会有所帮助：</block>
+  <block id="b9cf2d579e6b088870d384fe9910b52f" category="inline-link">卷和LUN管理</block>
+  <block id="8fc667c489390551a74eb985b297d37a" category="list-text"><block ref="8fc667c489390551a74eb985b297d37a" category="inline-link-rx"></block></block>
+  <block id="3e49e5936cffd2e96856c25fa0417df2" category="inline-link">网络管理</block>
+  <block id="57614f27dec39901199cca4b61cebfe9" category="list-text"><block ref="57614f27dec39901199cca4b61cebfe9" category="inline-link-rx"></block></block>
+  <block id="7e7397a7b79323762c61941fc0e6b5f9" category="inline-link">数据保护</block>
+  <block id="168463a2e30ac746441036fb49df730e" category="list-text"><block ref="168463a2e30ac746441036fb49df730e" category="inline-link-rx"></block></block>
+  <block id="e9c2ec7472702d9e84d77a3ecb12f454" category="sidebar">使用System Manager进行管理</block>
 </blocks>
